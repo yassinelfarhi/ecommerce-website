@@ -1,7 +1,6 @@
 version: '3'
 
 services:
-    ###> doctrine/doctrine-bundle ###
     database:
         container_name: database
         image: mysql:8.0
@@ -14,10 +13,43 @@ services:
         ports:
             - '4306:3306'
         volumes:
-            - ./mysql:/var/lib/mysql
+            - ./db-data:/var/lib/mysql:rw
+    php:
+        build:
+            context: .
+            target: app_php
+        image: sf-docker/php:dev
+        restart: on-failure
+        environment:
+            APP_ENV: dev
+            APP_DEBUG: 1
+            PHP_DATE_TIMEZONE: ${PHP_DATE_TIMEZONE:-UTC}
+            XDEBUG_CONFIG: remote_host=docker.for.mac.localhost
+            PHP_IDE_CONFIG: serverName=localhost
+        depends_on:
+            - database
+        volumes:
+            - .:/app:rw,cached
+            - var:/app/var
+
+    apache:
+        build:
+            context: .
+            target: app_apache
+        image: sf-docker/apache:dev
+        restart: on-failure
+        depends_on:
+            - php
+        volumes:
+            - ./public:/app/public:ro
+        ports:
+            - "8080:80"
+
     app:
         image: fbf053a375b6bbe0b4cd9f7be92ddec1438354b3ba0aa962aaa7ca76fdf2b066
         ports:
             - "8090:80"
+        volumes:
+            - .:/var/www/
 volumes:
     db-data:
