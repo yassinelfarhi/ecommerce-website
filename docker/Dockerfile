@@ -1,5 +1,7 @@
 FROM php:8.1-apache
 
+ARG WORKDIR=/var/www/
+
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/install-php-extensions && \
@@ -19,7 +21,15 @@ RUN cd /var/www && \
 #    npm install --force && \
 #    npm run build
 
-WORKDIR /var/www/
+WORKDIR ${WORKDIR}
+
+RUN set -eux \
+	&& mkdir -p var/cache var/log \
+	&& composer dump-autoload --classmap-authoritative
+
+
+VOLUME ${WORKDIR}
+VOLUME vendor
 #
 #ENTRYPOINT ["bash", "./docker/docker.sh"]
 #
