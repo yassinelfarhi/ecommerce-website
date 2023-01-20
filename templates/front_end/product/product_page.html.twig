@@ -3,7 +3,6 @@
 
 {% block main %}
 
-
         <!-- section start -->
         <section>
             <div class="collection-wrapper">
@@ -27,6 +26,8 @@
                         </div>
                         <div class="col-lg-5 col-sm-10 col-xs-12 order-up">
                             <div class="product-right-slick">
+
+                                {# Product image list #}
                                 <div><img src="../assets/images/pro3/1.jpg" alt=""
                                           class="img-fluid blur-up lazyload image_zoom_cls-0"></div>
                                 <div><img src="../assets/images/pro3/2.jpg" alt=""
@@ -53,6 +54,7 @@
                                         </li>
                                     </ul>
                                 </div>
+                                {# Product title #}
                                 <h2>Women Pink Shirt</h2>
                                 <div class="rating-section">
                                     <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -64,7 +66,9 @@
                                     <span class="badge badge-grey-color">#1 Best seller</span>
                                     <span class="label-text">in fashion</span>
                                 </div>
+                                {# product price #}
                                 <h3 class="price-detail">$32.96 <del>$459.00</del><span>55% off</span></h3>
+
                                 <ul class="color-variant">
                                     <li class="bg-light0 active"></li>
                                     <li class="bg-light1"></li>
@@ -72,8 +76,7 @@
                                 </ul>
                                 <div id="selectSize" class="addeffect-section product-description border-product">
                                     <h6 class="product-title size-text">select size <span><a href="" data-bs-toggle="modal"
-                                                                                             data-bs-target="#sizemodal">size
-                                                chart</a></span></h6>
+                                                                                             data-bs-target="#sizemodal">sizechart</a></span></h6>
                                     <div class="modal fade" id="sizemodal" tabindex="-1" role="dialog"
                                          aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -725,46 +728,6 @@
         <!-- tap to top end -->
 
 
-        <!-- latest jquery-->
-        <script src="../assets/js/jquery-3.3.1.min.js"></script>
-
-        <!-- menu js-->
-        <script src="../assets/js/menu.js"></script>
-
-        <!-- lazyload js-->
-        <script src="../assets/js/lazysizes.min.js"></script>
-
-        <!-- sticky cart bottom js-->
-        <script src="../assets/js/sticky-cart-bottom.js"></script>
-
-        <!-- slick js-->
-        <script src="../assets/js/slick.js"></script>
-
-        <!-- timer js-->
-        <script src="../assets/js/timer.js"></script>
-
-        <!-- Bootstrap js-->
-        <script src="../assets/js/bootstrap.bundle.min.js"></script>
-
-        <!-- Bootstrap Notification js-->
-        <script src="../assets/js/bootstrap-notify.min.js"></script>
-
-        <!-- Zoom js-->
-        <script src="../assets/js/jquery.elevatezoom.js"></script>
-
-        <!-- Theme js-->
-        <script src="../assets/js/theme-setting.js"></script>
-        <script src="../assets/js/script.js"></script>
-
-        <script>
-            function openSearch() {
-                document.getElementById("search-overlay").style.display = "block";
-            }
-
-            function closeSearch() {
-                document.getElementById("search-overlay").style.display = "none";
-            }
-        </script>
 
 {% endblock %}
 

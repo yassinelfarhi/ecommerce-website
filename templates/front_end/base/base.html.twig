@@ -198,11 +198,6 @@
         </div>
            <!-- loader end -->
 
-
-{#            {% block header %}#}
-
-{#            {% endblock %}#}
-
            {% block header %}
                    {% include 'front_end/base/_header.html.twig' %}
            {% endblock %}
@@ -218,6 +213,10 @@
             {% block footer %}
                 {% include 'front_end/base/_footer.html.twig' %}
             {% endblock %}
+
+           {% block js %}
+                   {% include 'front_end/base/_js.html.twig' %}
+           {% endblock %}
 
 
         </body>
