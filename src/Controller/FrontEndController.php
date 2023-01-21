@@ -26,6 +26,7 @@ class FrontEndController extends AbstractController
     #[Route('/products', name: 'app_products')]
     public function products(): Response
     {
+        // Get the proiduct by it's id or slug
         return $this->render('front_end/product/product_page.html.twig');
     }
 
