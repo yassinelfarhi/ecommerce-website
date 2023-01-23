@@ -15,6 +15,7 @@ class Product
     private ?int $id = null;
 
     #[ORM\Column]
+    #[Assert\Unique]
     private ?int $apiId = null;
 
     #[ORM\Column(nullable: true)]

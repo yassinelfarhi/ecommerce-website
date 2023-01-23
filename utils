@@ -1,0 +1,5 @@
+Compacter les fichiers js & css
+==> yarn encore dev watch
+
+build les fichier de js & css
+==> yarn encore dev build

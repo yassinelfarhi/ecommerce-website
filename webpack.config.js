@@ -15,7 +15,7 @@ Encore
     //.setManifestKeyPrefix('build/')
 
     .copyFiles({
-        from: './assets/images',
+        from: './assets/styles/images',
         to: 'images/[path][name].[hash:8].[ext]',
     })
     /*
@@ -74,7 +74,7 @@ Encore
     //.enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+    .autoProvidejQuery()
 ;
 
 module.exports = Encore.getWebpackConfig();

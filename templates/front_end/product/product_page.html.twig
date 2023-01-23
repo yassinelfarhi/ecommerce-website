@@ -12,14 +12,19 @@
                             <div class="row">
                                 <div class="col-12 p-0">
                                     <div class="slider-right-nav">
-                                        <div><img src="../assets/images/pro3/1.jpg" alt=""
-                                                  class="img-fluid blur-up lazyload"></div>
-                                        <div><img src="../assets/images/pro3/2.jpg" alt=""
-                                                  class="img-fluid blur-up lazyload"></div>
-                                        <div><img src="../assets/images/pro3/27.jpg" alt=""
-                                                  class="img-fluid blur-up lazyload"></div>
-                                        <div><img src="../assets/images/pro3/27.jpg" alt=""
-                                                  class="img-fluid blur-up lazyload"></div>
+                                        {% for image in product.images %}#}
+                                        <div><img src="{{ image  }}" alt="{{ product.name }}"
+                                                  class="img-fluid blur-up lazyload image_zoom_cls-1"></div>
+                                            {% endfor %}
+
+{#                                        <div><img src="../assets/images/pro3/1.jpg" alt=""#}
+{#                                                  class="img-fluid blur-up lazyload"></div>#}
+{#                                        <div><img src="../assets/images/pro3/2.jpg" alt=""#}
+{#                                                  class="img-fluid blur-up lazyload"></div>#}
+{#                                        <div><img src="../assets/images/pro3/27.jpg" alt=""#}
+{#                                                  class="img-fluid blur-up lazyload"></div>#}
+{#                                        <div><img src="../assets/images/pro3/27.jpg" alt=""#}
+{#                                                  class="img-fluid blur-up lazyload"></div>#}
                                     </div>
                                 </div>
                             </div>
@@ -28,14 +33,9 @@
                             <div class="product-right-slick">
 
                                 {# Product image list #}
-                                <div><img src="../assets/images/pro3/1.jpg" alt=""
+                                <div><img src="{{ product.mainImage }}" alt="{{ product.name }}"
                                           class="img-fluid blur-up lazyload image_zoom_cls-0"></div>
-                                <div><img src="../assets/images/pro3/2.jpg" alt=""
-                                          class="img-fluid blur-up lazyload image_zoom_cls-1"></div>
-                                <div><img src="../assets/images/pro3/27.jpg" alt=""
-                                          class="img-fluid blur-up lazyload image_zoom_cls-2"></div>
-                                <div><img src="../assets/images/pro3/27.jpg" alt=""
-                                          class="img-fluid blur-up lazyload image_zoom_cls-3"></div>
+
                             </div>
                         </div>
                         <div class="col-lg-6 rtl-text">
@@ -55,7 +55,7 @@
                                     </ul>
                                 </div>
                                 {# Product title #}
-                                <h2>Women Pink Shirt</h2>
+                                <h2>{{ product.name }}</h2>
                                 <div class="rating-section">
                                     <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
@@ -67,7 +67,7 @@
                                     <span class="label-text">in fashion</span>
                                 </div>
                                 {# product price #}
-                                <h3 class="price-detail">$32.96 <del>$459.00</del><span>55% off</span></h3>
+                                <h3 class="price-detail">{{ product.price}} <del>$459.00</del><span>55% off</span></h3>
 
                                 <ul class="color-variant">
                                     <li class="bg-light0 active"></li>
@@ -193,9 +193,7 @@
                                  aria-labelledby="top-home-tab">
                                 <div class="product-tab-discription">
                                     <div class="part">
-                                        <p>The Model is wearing a white blouse from our stylist's collection, see the image
-                                            for a mock-up of what the actual blouse would look like.it has text written on
-                                            it in a black cursive language which looks great on a white color.</p>
+                                        <p>{{ product.description|raw }}</p>
                                     </div>
                                     <div class="part">
                                         <h5 class="inner-title">fabric:</h5>
