@@ -12,36 +12,20 @@
     <link rel="shortcut icon" href="../assets/images/favicon/1.png" type="image/x-icon">
     <title>Multikart - Multi-purpose E-commerce Html Template</title>
 
+
     <!--Google font-->
-<!--    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">-->
-<!--    <link rel="preconnect" href="https://fonts.gstatic.com">-->
-<!--    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">-->
+{#    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">#}
+{#    <link rel="preconnect" href="https://fonts.gstatic.com">#}
+{#    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">#}
 
-<!--    &lt;!&ndash; Icons &ndash;&gt;-->
-<!--    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/font-awesome.css">-->
 
-<!--    &lt;!&ndash;Slick slider css&ndash;&gt;-->
-<!--    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick.css">-->
-<!--    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick-theme.css">-->
-
-<!--    &lt;!&ndash; Animate icon &ndash;&gt;-->
-<!--    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/animate.css">-->
-
-<!--    &lt;!&ndash; Price range icon &ndash;&gt;-->
-<!--    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/price-range.css">-->
-
-<!--    &lt;!&ndash; Themify icon &ndash;&gt;-->
-<!--    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/themify-icons.css">-->
-
-<!--    &lt;!&ndash; Bootstrap css &ndash;&gt;-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
-
-<!--    &lt;!&ndash; Theme css &ndash;&gt;-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
 
 </head>
 
-<body class="theme-color-1">
+    <body class="theme-color-1">
 
 <!-- loader start -->
 <div class="loader_skeleton">
@@ -127,12 +111,12 @@
                                         <li class="onhover-div mobile-setting">
                                             <div><img src="../assets/images/icon/setting.png"
                                                       class="img-fluid blur-up lazyload" alt=""> <i
-                                                    class="ti-settings"></i></div>
+                                                        class="ti-settings"></i></div>
                                         </li>
                                         <li class="onhover-div mobile-cart">
                                             <div><img src="../assets/images/icon/cart.png"
                                                       class="img-fluid blur-up lazyload" alt=""> <i
-                                                    class="ti-shopping-cart"></i></div>
+                                                        class="ti-shopping-cart"></i></div>
                                         </li>
                                     </ul>
                                 </div>
@@ -508,8 +492,8 @@
                                                         </div>
                                                         <div class="col-xl-4">
                                                             <a href="#" class="mega-menu-banner"><img
-                                                                    src="../assets/images/mega-menu/fashion.jpg"
-                                                                    alt="" class="img-fluid blur-up lazyload"></a>
+                                                                        src="../assets/images/mega-menu/fashion.jpg"
+                                                                        alt="" class="img-fluid blur-up lazyload"></a>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -627,19 +611,19 @@
                                                                     <ul>
                                                                         <li><a target="_blank"
                                                                                href="invoice-1.html">invoice
-                                                                            1</a></li>
+                                                                                1</a></li>
                                                                         <li><a target="_blank"
                                                                                href="invoice-2.html">invoice
-                                                                            2</a></li>
+                                                                                2</a></li>
                                                                         <li><a target="_blank"
                                                                                href="invoice-3.html">invoice
-                                                                            3</a></li>
+                                                                                3</a></li>
                                                                         <li><a target="_blank"
                                                                                href="invoice-4.html">invoice
-                                                                            4</a></li>
+                                                                                4</a></li>
                                                                         <li><a target="_blank"
                                                                                href="invoice-5.html">invoice
-                                                                            5</a></li>
+                                                                                5</a></li>
                                                                     </ul>
                                                                 </div>
                                                                 <div class="menu-title mt-2">
@@ -648,10 +632,10 @@
                                                                 <div class="menu-content">
                                                                     <ul>
                                                                         <li><a href="elements.html">
-                                                                            elements page<i
-                                                                                class="ms-2 fa fa-bolt icon-trend"
-                                                                                aria-hidden="true"></i>
-                                                                        </a></li>
+                                                                                elements page<i
+                                                                                        class="ms-2 fa fa-bolt icon-trend"
+                                                                                        aria-hidden="true"></i>
+                                                                            </a></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -714,8 +698,8 @@
                                                                 <div class="menu-content">
                                                                     <ul>
                                                                         <li><a href="index.html">bottom<i
-                                                                                class="ms-2 fa fa-bolt icon-trend"
-                                                                                aria-hidden="true"></i></a></li>
+                                                                                        class="ms-2 fa fa-bolt icon-trend"
+                                                                                        aria-hidden="true"></i></a></li>
                                                                         <li><a href="fashion-4.html">bottom left</a>
                                                                         </li>
                                                                         <li><a href="bicycle.html">bottom right</a>
@@ -728,9 +712,9 @@
                                                                 <div class="menu-content">
                                                                     <ul>
                                                                         <li><a href="marketplace-demo-2.html">ajax
-                                                                            search<i
-                                                                                    class="ms-2 fa fa-bolt icon-trend"
-                                                                                    aria-hidden="true"></i></a></li>
+                                                                                search<i
+                                                                                        class="ms-2 fa fa-bolt icon-trend"
+                                                                                        aria-hidden="true"></i></a></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -745,16 +729,16 @@
                                                                     <ul>
                                                                         <li><a href="index.html">Newsletter</a></li>
                                                                         <li><a href="index.html">exit<i
-                                                                                class="ms-2 fa fa-bolt icon-trend"
-                                                                                aria-hidden="true"></i></a></li>
+                                                                                        class="ms-2 fa fa-bolt icon-trend"
+                                                                                        aria-hidden="true"></i></a></li>
                                                                         <li><a href="christmas.html">christmas</a>
                                                                         </li>
                                                                         <li><a href="furniture-3.html">black
-                                                                            friday</a></li>
+                                                                                friday</a></li>
                                                                         <li><a href="fashion-4.html">cyber
-                                                                            monday</a></li>
+                                                                                monday</a></li>
                                                                         <li><a href="marketplace-demo-3.html">new
-                                                                            year</a>
+                                                                                year</a>
                                                                         </li>
                                                                     </ul>
                                                                 </div>
@@ -769,10 +753,10 @@
                                                                 <div class="menu-content">
                                                                     <ul>
                                                                         <li><a href="nursery.html">cart modal
-                                                                            popup</a></li>
+                                                                                popup</a></li>
                                                                         <li><a href="vegetables.html">qty. counter
-                                                                            <i class="fa fa-bolt icon-trend"
-                                                                               aria-hidden="true"></i></a></li>
+                                                                                <i class="fa fa-bolt icon-trend"
+                                                                                   aria-hidden="true"></i></a></li>
                                                                         <li><a href="bags.html">cart top</a></li>
                                                                         <li><a href="shoes.html">cart bottom</a>
                                                                         </li>
@@ -797,7 +781,7 @@
                                         <a href="#">shop</a>
                                         <ul>
                                             <li><a href="category-page(vegetables).html">tab style<span
-                                                    class="new-tag">new</span></a></li>
+                                                            class="new-tag">new</span></a></li>
                                             <li><a href="category-page(top-filter).html">top filter</a></li>
                                             <li><a href="category-page(modern).html">modern</a></li>
                                             <li><a href="category-page.html">left sidebar</a></li>
@@ -808,7 +792,7 @@
                                             <li><a href="category-page(metro).html">metro</a></li>
                                             <li><a href="category-page(full-width).html">full width</a></li>
                                             <li><a href="category-page(infinite-scroll).html">infinite
-                                                scroll</a></li>
+                                                    scroll</a></li>
                                             <li><a href=category-page(3-grid).html>three grid</a></li>
                                             <li><a href="category-page(6-grid).html">six grid</a></li>
                                             <li><a href="category-page(list-view).html">list view</a></li>
@@ -818,15 +802,15 @@
                                         <a href="#">product</a>
                                         <ul>
                                             <li><a href="product-page(360-view).html">360 view <span
-                                                    class="new-tag">new</span></a></li>
+                                                            class="new-tag">new</span></a></li>
                                             <li><a href="product-page(video-thumbnail).html">video
-                                                thumbnail<span class="new-tag">new</span></a></li>
+                                                    thumbnail<span class="new-tag">new</span></a></li>
                                             <li>
                                                 <a href="#">sidebar</a>
                                                 <ul>
                                                     <li><a href="product-page.html">left sidebar</a></li>
                                                     <li><a href="product-page(right-sidebar).html">right
-                                                        sidebar</a>
+                                                            sidebar</a>
                                                     </li>
                                                     <li><a href="product-page(no-sidebar).html">no sidebar</a>
                                                     </li>
@@ -840,20 +824,20 @@
                                                     <li><a href="product-page(right-image).html">right image</a>
                                                     </li>
                                                     <li><a href="product-page(image-outside).html">image
-                                                        outside</a></li>
+                                                            outside</a></li>
                                                 </ul>
                                             </li>
                                             <li>
                                                 <a href="#">three column</a>
                                                 <ul>
                                                     <li><a href="product-page(3-col-left).html">thumbnail
-                                                        left</a>
+                                                            left</a>
                                                     </li>
                                                     <li><a href="product-page(3-col-right).html">thumbnail
-                                                        right</a>
+                                                            right</a>
                                                     </li>
                                                     <li><a href="product-page(3-column).html">thubnail
-                                                        bottom</a>
+                                                            bottom</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -890,7 +874,7 @@
                                                     <li><a href="checkout.html">checkout</a></li>
                                                     <li><a href="order-success.html">order success</a></li>
                                                     <li><a href="order-tracking.html">order tracking<span
-                                                            class="new-tag">new</span></a></li>
+                                                                    class="new-tag">new</span></a></li>
                                                 </ul>
                                             </li>
                                             <li>
@@ -899,11 +883,11 @@
                                                     <li><a href="">grid</a>
                                                         <ul>
                                                             <li><a href="grid-2-col.html">grid
-                                                                2</a></li>
+                                                                    2</a></li>
                                                             <li><a href="grid-3-col.html">grid
-                                                                3</a></li>
+                                                                    3</a></li>
                                                             <li><a href="grid-4-col.html">grid
-                                                                4</a></li>
+                                                                    4</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="">masonry</a>
@@ -972,7 +956,7 @@
                                                                                placeholder="Search a Product">
                                                                     </div>
                                                                     <button type="submit" class="btn btn-primary"><i
-                                                                            class="fa fa-search"></i></button>
+                                                                                class="fa fa-search"></i></button>
                                                                 </form>
                                                             </div>
                                                         </div>
@@ -1191,9 +1175,9 @@
                                         <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
                                                     class="fa fa-star"></i></div><a
-                                            href="product-page(no-sidebar).html">
-                                        <h6>Slim Fit Cotton Shirt</h6>
-                                    </a>
+                                                href="product-page(no-sidebar).html">
+                                            <h6>Slim Fit Cotton Shirt</h6>
+                                        </a>
                                         <h4>$500.00</h4>
                                     </div>
                                 </div>
@@ -1204,9 +1188,9 @@
                                         <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
                                                     class="fa fa-star"></i></div><a
-                                            href="product-page(no-sidebar).html">
-                                        <h6>Slim Fit Cotton Shirt</h6>
-                                    </a>
+                                                href="product-page(no-sidebar).html">
+                                            <h6>Slim Fit Cotton Shirt</h6>
+                                        </a>
                                         <h4>$500.00</h4>
                                     </div>
                                 </div>
@@ -1217,9 +1201,9 @@
                                         <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
                                                     class="fa fa-star"></i></div><a
-                                            href="product-page(no-sidebar).html">
-                                        <h6>Slim Fit Cotton Shirt</h6>
-                                    </a>
+                                                href="product-page(no-sidebar).html">
+                                            <h6>Slim Fit Cotton Shirt</h6>
+                                        </a>
                                         <h4>$500.00</h4>
                                     </div>
                                 </div>
@@ -1232,9 +1216,9 @@
                                         <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
                                                     class="fa fa-star"></i></div><a
-                                            href="product-page(no-sidebar).html">
-                                        <h6>Slim Fit Cotton Shirt</h6>
-                                    </a>
+                                                href="product-page(no-sidebar).html">
+                                            <h6>Slim Fit Cotton Shirt</h6>
+                                        </a>
                                         <h4>$500.00</h4>
                                     </div>
                                 </div>
@@ -1245,9 +1229,9 @@
                                         <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
                                                     class="fa fa-star"></i></div><a
-                                            href="product-page(no-sidebar).html">
-                                        <h6>Slim Fit Cotton Shirt</h6>
-                                    </a>
+                                                href="product-page(no-sidebar).html">
+                                            <h6>Slim Fit Cotton Shirt</h6>
+                                        </a>
                                         <h4>$500.00</h4>
                                     </div>
                                 </div>
@@ -1258,9 +1242,9 @@
                                         <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
                                                     class="fa fa-star"></i></div><a
-                                            href="product-page(no-sidebar).html">
-                                        <h6>Slim Fit Cotton Shirt</h6>
-                                    </a>
+                                                href="product-page(no-sidebar).html">
+                                            <h6>Slim Fit Cotton Shirt</h6>
+                                        </a>
                                         <h4>$500.00</h4>
                                     </div>
                                 </div>
@@ -1299,8 +1283,8 @@
                                         <div class="row">
                                             <div class="col-xl-12">
                                                 <div class="filter-main-btn"><span
-                                                        class="filter-btn btn btn-theme"><i class="fa fa-filter"
-                                                                                            aria-hidden="true"></i> Filter</span></div>
+                                                            class="filter-btn btn btn-theme"><i class="fa fa-filter"
+                                                                                                aria-hidden="true"></i> Filter</span></div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -1366,23 +1350,23 @@
                                                         <div class="cart-info cart-wrap">
                                                             <button data-bs-toggle="modal"
                                                                     data-bs-target="#addtocart" title="Add to cart"><i
-                                                                    class="ti-shopping-cart"></i></button> <a
-                                                                href="javascript:void(0)" title="Add to Wishlist"><i
-                                                                class="ti-heart" aria-hidden="true"></i></a> <a
-                                                                href="#" data-bs-toggle="modal"
-                                                                data-bs-target="#quick-view" title="Quick View"><i
-                                                                class="ti-search" aria-hidden="true"></i></a> <a
-                                                                href="compare.html" title="Compare"><i
-                                                                class="ti-reload" aria-hidden="true"></i></a>
+                                                                        class="ti-shopping-cart"></i></button> <a
+                                                                    href="javascript:void(0)" title="Add to Wishlist"><i
+                                                                        class="ti-heart" aria-hidden="true"></i></a> <a
+                                                                    href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#quick-view" title="Quick View"><i
+                                                                        class="ti-search" aria-hidden="true"></i></a> <a
+                                                                    href="compare.html" title="Compare"><i
+                                                                        class="ti-reload" aria-hidden="true"></i></a>
                                                         </div>
                                                     </div>
                                                     <div class="product-detail">
                                                         <div>
                                                             <div class="rating"><i class="fa fa-star"></i> <i
-                                                                    class="fa fa-star"></i> <i
-                                                                    class="fa fa-star"></i> <i
-                                                                    class="fa fa-star"></i> <i
-                                                                    class="fa fa-star"></i></div>
+                                                                        class="fa fa-star"></i> <i
+                                                                        class="fa fa-star"></i> <i
+                                                                        class="fa fa-star"></i> <i
+                                                                        class="fa fa-star"></i></div>
                                                             <a href="product-page(no-sidebar).html">
                                                                 <h6>Slim Fit Cotton Shirt</h6>
                                                             </a>
@@ -1419,19 +1403,19 @@
                                                         <div class="cart-info cart-wrap">
                                                             <button data-bs-toggle="modal"
                                                                     data-bs-target="#addtocart" title="Add to cart"><i
-                                                                    class="ti-shopping-cart"></i></button> <a
-                                                                href="javascript:void(0)" title="Add to Wishlist"><i
-                                                                class="ti-heart" aria-hidden="true"></i></a> <a
-                                                                href="#" data-bs-toggle="modal"
-                                                                data-bs-target="#quick-view" title="Quick View"><i
-                                                                class="ti-search" aria-hidden="true"></i></a> <a
-                                                                href="compare.html" title="Compare"><i
-                                                                class="ti-reload" aria-hidden="true"></i></a>
+                                                                        class="ti-shopping-cart"></i></button> <a
+                                                                    href="javascript:void(0)" title="Add to Wishlist"><i
+                                                                        class="ti-heart" aria-hidden="true"></i></a> <a
+                                                                    href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#quick-view" title="Quick View"><i
+                                                                        class="ti-search" aria-hidden="true"></i></a> <a
+                                                                    href="compare.html" title="Compare"><i
+                                                                        class="ti-reload" aria-hidden="true"></i></a>
                                                         </div>
                                                     </div>
                                                     <div class="product-detail">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
-                                                                class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                                    class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                         </div>
                                                         <a href="product-page(no-sidebar).html">
@@ -1468,19 +1452,19 @@
                                                         <div class="cart-info cart-wrap">
                                                             <button data-bs-toggle="modal"
                                                                     data-bs-target="#addtocart" title="Add to cart"><i
-                                                                    class="ti-shopping-cart"></i></button> <a
-                                                                href="javascript:void(0)" title="Add to Wishlist"><i
-                                                                class="ti-heart" aria-hidden="true"></i></a> <a
-                                                                href="#" data-bs-toggle="modal"
-                                                                data-bs-target="#quick-view" title="Quick View"><i
-                                                                class="ti-search" aria-hidden="true"></i></a> <a
-                                                                href="compare.html" title="Compare"><i
-                                                                class="ti-reload" aria-hidden="true"></i></a>
+                                                                        class="ti-shopping-cart"></i></button> <a
+                                                                    href="javascript:void(0)" title="Add to Wishlist"><i
+                                                                        class="ti-heart" aria-hidden="true"></i></a> <a
+                                                                    href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#quick-view" title="Quick View"><i
+                                                                        class="ti-search" aria-hidden="true"></i></a> <a
+                                                                    href="compare.html" title="Compare"><i
+                                                                        class="ti-reload" aria-hidden="true"></i></a>
                                                         </div>
                                                     </div>
                                                     <div class="product-detail">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
-                                                                class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                                    class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                         </div>
                                                         <a href="product-page(no-sidebar).html">
@@ -1517,19 +1501,19 @@
                                                         <div class="cart-info cart-wrap">
                                                             <button data-bs-toggle="modal"
                                                                     data-bs-target="#addtocart" title="Add to cart"><i
-                                                                    class="ti-shopping-cart"></i></button> <a
-                                                                href="javascript:void(0)" title="Add to Wishlist"><i
-                                                                class="ti-heart" aria-hidden="true"></i></a> <a
-                                                                href="#" data-bs-toggle="modal"
-                                                                data-bs-target="#quick-view" title="Quick View"><i
-                                                                class="ti-search" aria-hidden="true"></i></a> <a
-                                                                href="compare.html" title="Compare"><i
-                                                                class="ti-reload" aria-hidden="true"></i></a>
+                                                                        class="ti-shopping-cart"></i></button> <a
+                                                                    href="javascript:void(0)" title="Add to Wishlist"><i
+                                                                        class="ti-heart" aria-hidden="true"></i></a> <a
+                                                                    href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#quick-view" title="Quick View"><i
+                                                                        class="ti-search" aria-hidden="true"></i></a> <a
+                                                                    href="compare.html" title="Compare"><i
+                                                                        class="ti-reload" aria-hidden="true"></i></a>
                                                         </div>
                                                     </div>
                                                     <div class="product-detail">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
-                                                                class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                                    class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                         </div>
                                                         <a href="product-page(no-sidebar).html">
@@ -1566,19 +1550,19 @@
                                                         <div class="cart-info cart-wrap">
                                                             <button data-bs-toggle="modal"
                                                                     data-bs-target="#addtocart" title="Add to cart"><i
-                                                                    class="ti-shopping-cart"></i></button> <a
-                                                                href="javascript:void(0)" title="Add to Wishlist"><i
-                                                                class="ti-heart" aria-hidden="true"></i></a> <a
-                                                                href="#" data-bs-toggle="modal"
-                                                                data-bs-target="#quick-view" title="Quick View"><i
-                                                                class="ti-search" aria-hidden="true"></i></a> <a
-                                                                href="compare.html" title="Compare"><i
-                                                                class="ti-reload" aria-hidden="true"></i></a>
+                                                                        class="ti-shopping-cart"></i></button> <a
+                                                                    href="javascript:void(0)" title="Add to Wishlist"><i
+                                                                        class="ti-heart" aria-hidden="true"></i></a> <a
+                                                                    href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#quick-view" title="Quick View"><i
+                                                                        class="ti-search" aria-hidden="true"></i></a> <a
+                                                                    href="compare.html" title="Compare"><i
+                                                                        class="ti-reload" aria-hidden="true"></i></a>
                                                         </div>
                                                     </div>
                                                     <div class="product-detail">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
-                                                                class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                                    class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                         </div>
                                                         <a href="product-page(no-sidebar).html">
@@ -1615,19 +1599,19 @@
                                                         <div class="cart-info cart-wrap">
                                                             <button data-bs-toggle="modal"
                                                                     data-bs-target="#addtocart" title="Add to cart"><i
-                                                                    class="ti-shopping-cart"></i></button> <a
-                                                                href="javascript:void(0)" title="Add to Wishlist"><i
-                                                                class="ti-heart" aria-hidden="true"></i></a> <a
-                                                                href="#" data-bs-toggle="modal"
-                                                                data-bs-target="#quick-view" title="Quick View"><i
-                                                                class="ti-search" aria-hidden="true"></i></a> <a
-                                                                href="compare.html" title="Compare"><i
-                                                                class="ti-reload" aria-hidden="true"></i></a>
+                                                                        class="ti-shopping-cart"></i></button> <a
+                                                                    href="javascript:void(0)" title="Add to Wishlist"><i
+                                                                        class="ti-heart" aria-hidden="true"></i></a> <a
+                                                                    href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#quick-view" title="Quick View"><i
+                                                                        class="ti-search" aria-hidden="true"></i></a> <a
+                                                                    href="compare.html" title="Compare"><i
+                                                                        class="ti-reload" aria-hidden="true"></i></a>
                                                         </div>
                                                     </div>
                                                     <div class="product-detail">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
-                                                                class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                                    class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                         </div>
                                                         <a href="product-page(no-sidebar).html">
@@ -1664,19 +1648,19 @@
                                                         <div class="cart-info cart-wrap">
                                                             <button data-bs-toggle="modal"
                                                                     data-bs-target="#addtocart" title="Add to cart"><i
-                                                                    class="ti-shopping-cart"></i></button> <a
-                                                                href="javascript:void(0)" title="Add to Wishlist"><i
-                                                                class="ti-heart" aria-hidden="true"></i></a> <a
-                                                                href="#" data-bs-toggle="modal"
-                                                                data-bs-target="#quick-view" title="Quick View"><i
-                                                                class="ti-search" aria-hidden="true"></i></a> <a
-                                                                href="compare.html" title="Compare"><i
-                                                                class="ti-reload" aria-hidden="true"></i></a>
+                                                                        class="ti-shopping-cart"></i></button> <a
+                                                                    href="javascript:void(0)" title="Add to Wishlist"><i
+                                                                        class="ti-heart" aria-hidden="true"></i></a> <a
+                                                                    href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#quick-view" title="Quick View"><i
+                                                                        class="ti-search" aria-hidden="true"></i></a> <a
+                                                                    href="compare.html" title="Compare"><i
+                                                                        class="ti-reload" aria-hidden="true"></i></a>
                                                         </div>
                                                     </div>
                                                     <div class="product-detail">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
-                                                                class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                                    class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                         </div>
                                                         <a href="product-page(no-sidebar).html">
@@ -1713,19 +1697,19 @@
                                                         <div class="cart-info cart-wrap">
                                                             <button data-bs-toggle="modal"
                                                                     data-bs-target="#addtocart" title="Add to cart"><i
-                                                                    class="ti-shopping-cart"></i></button> <a
-                                                                href="javascript:void(0)" title="Add to Wishlist"><i
-                                                                class="ti-heart" aria-hidden="true"></i></a> <a
-                                                                href="#" data-bs-toggle="modal"
-                                                                data-bs-target="#quick-view" title="Quick View"><i
-                                                                class="ti-search" aria-hidden="true"></i></a> <a
-                                                                href="compare.html" title="Compare"><i
-                                                                class="ti-reload" aria-hidden="true"></i></a>
+                                                                        class="ti-shopping-cart"></i></button> <a
+                                                                    href="javascript:void(0)" title="Add to Wishlist"><i
+                                                                        class="ti-heart" aria-hidden="true"></i></a> <a
+                                                                    href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#quick-view" title="Quick View"><i
+                                                                        class="ti-search" aria-hidden="true"></i></a> <a
+                                                                    href="compare.html" title="Compare"><i
+                                                                        class="ti-reload" aria-hidden="true"></i></a>
                                                         </div>
                                                     </div>
                                                     <div class="product-detail">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
-                                                                class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                                    class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                         </div>
                                                         <a href="product-page(no-sidebar).html">
@@ -1762,19 +1746,19 @@
                                                         <div class="cart-info cart-wrap">
                                                             <button data-bs-toggle="modal"
                                                                     data-bs-target="#addtocart" title="Add to cart"><i
-                                                                    class="ti-shopping-cart"></i></button> <a
-                                                                href="javascript:void(0)" title="Add to Wishlist"><i
-                                                                class="ti-heart" aria-hidden="true"></i></a> <a
-                                                                href="#" data-bs-toggle="modal"
-                                                                data-bs-target="#quick-view" title="Quick View"><i
-                                                                class="ti-search" aria-hidden="true"></i></a> <a
-                                                                href="compare.html" title="Compare"><i
-                                                                class="ti-reload" aria-hidden="true"></i></a>
+                                                                        class="ti-shopping-cart"></i></button> <a
+                                                                    href="javascript:void(0)" title="Add to Wishlist"><i
+                                                                        class="ti-heart" aria-hidden="true"></i></a> <a
+                                                                    href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#quick-view" title="Quick View"><i
+                                                                        class="ti-search" aria-hidden="true"></i></a> <a
+                                                                    href="compare.html" title="Compare"><i
+                                                                        class="ti-reload" aria-hidden="true"></i></a>
                                                         </div>
                                                     </div>
                                                     <div class="product-detail">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
-                                                                class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                                    class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                         </div>
                                                         <a href="product-page(no-sidebar).html">
@@ -1811,19 +1795,19 @@
                                                         <div class="cart-info cart-wrap">
                                                             <button data-bs-toggle="modal"
                                                                     data-bs-target="#addtocart" title="Add to cart"><i
-                                                                    class="ti-shopping-cart"></i></button> <a
-                                                                href="javascript:void(0)" title="Add to Wishlist"><i
-                                                                class="ti-heart" aria-hidden="true"></i></a> <a
-                                                                href="#" data-bs-toggle="modal"
-                                                                data-bs-target="#quick-view" title="Quick View"><i
-                                                                class="ti-search" aria-hidden="true"></i></a> <a
-                                                                href="compare.html" title="Compare"><i
-                                                                class="ti-reload" aria-hidden="true"></i></a>
+                                                                        class="ti-shopping-cart"></i></button> <a
+                                                                    href="javascript:void(0)" title="Add to Wishlist"><i
+                                                                        class="ti-heart" aria-hidden="true"></i></a> <a
+                                                                    href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#quick-view" title="Quick View"><i
+                                                                        class="ti-search" aria-hidden="true"></i></a> <a
+                                                                    href="compare.html" title="Compare"><i
+                                                                        class="ti-reload" aria-hidden="true"></i></a>
                                                         </div>
                                                     </div>
                                                     <div class="product-detail">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
-                                                                class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                                    class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                         </div>
                                                         <a href="product-page(no-sidebar).html">
@@ -1860,19 +1844,19 @@
                                                         <div class="cart-info cart-wrap">
                                                             <button data-bs-toggle="modal"
                                                                     data-bs-target="#addtocart" title="Add to cart"><i
-                                                                    class="ti-shopping-cart"></i></button> <a
-                                                                href="javascript:void(0)" title="Add to Wishlist"><i
-                                                                class="ti-heart" aria-hidden="true"></i></a> <a
-                                                                href="#" data-bs-toggle="modal"
-                                                                data-bs-target="#quick-view" title="Quick View"><i
-                                                                class="ti-search" aria-hidden="true"></i></a> <a
-                                                                href="compare.html" title="Compare"><i
-                                                                class="ti-reload" aria-hidden="true"></i></a>
+                                                                        class="ti-shopping-cart"></i></button> <a
+                                                                    href="javascript:void(0)" title="Add to Wishlist"><i
+                                                                        class="ti-heart" aria-hidden="true"></i></a> <a
+                                                                    href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#quick-view" title="Quick View"><i
+                                                                        class="ti-search" aria-hidden="true"></i></a> <a
+                                                                    href="compare.html" title="Compare"><i
+                                                                        class="ti-reload" aria-hidden="true"></i></a>
                                                         </div>
                                                     </div>
                                                     <div class="product-detail">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
-                                                                class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                                    class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                         </div>
                                                         <a href="product-page(no-sidebar).html">
@@ -1909,19 +1893,19 @@
                                                         <div class="cart-info cart-wrap">
                                                             <button data-bs-toggle="modal"
                                                                     data-bs-target="#addtocart" title="Add to cart"><i
-                                                                    class="ti-shopping-cart"></i></button> <a
-                                                                href="javascript:void(0)" title="Add to Wishlist"><i
-                                                                class="ti-heart" aria-hidden="true"></i></a> <a
-                                                                href="#" data-bs-toggle="modal"
-                                                                data-bs-target="#quick-view" title="Quick View"><i
-                                                                class="ti-search" aria-hidden="true"></i></a> <a
-                                                                href="compare.html" title="Compare"><i
-                                                                class="ti-reload" aria-hidden="true"></i></a>
+                                                                        class="ti-shopping-cart"></i></button> <a
+                                                                    href="javascript:void(0)" title="Add to Wishlist"><i
+                                                                        class="ti-heart" aria-hidden="true"></i></a> <a
+                                                                    href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#quick-view" title="Quick View"><i
+                                                                        class="ti-search" aria-hidden="true"></i></a> <a
+                                                                    href="compare.html" title="Compare"><i
+                                                                        class="ti-reload" aria-hidden="true"></i></a>
                                                         </div>
                                                     </div>
                                                     <div class="product-detail">
                                                         <div class="rating"><i class="fa fa-star"></i> <i
-                                                                class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                                    class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                             <i class="fa fa-star"></i> <i class="fa fa-star"></i>
                                                         </div>
                                                         <a href="product-page(no-sidebar).html">
@@ -1952,10 +1936,10 @@
                                                         <ul class="pagination">
                                                             <li class="page-item"><a class="page-link" href="#"
                                                                                      aria-label="Previous"><span
-                                                                    aria-hidden="true"><i
-                                                                    class="fa fa-chevron-left"
-                                                                    aria-hidden="true"></i></span> <span
-                                                                    class="sr-only">Previous</span></a></li>
+                                                                            aria-hidden="true"><i
+                                                                                class="fa fa-chevron-left"
+                                                                                aria-hidden="true"></i></span> <span
+                                                                            class="sr-only">Previous</span></a></li>
                                                             <li class="page-item active"><a class="page-link"
                                                                                             href="#">1</a></li>
                                                             <li class="page-item"><a class="page-link"
@@ -1964,9 +1948,9 @@
                                                                                      href="#">3</a></li>
                                                             <li class="page-item"><a class="page-link" href="#"
                                                                                      aria-label="Next"><span aria-hidden="true"><i
-                                                                    class="fa fa-chevron-right"
-                                                                    aria-hidden="true"></i></span> <span
-                                                                    class="sr-only">Next</span></a></li>
+                                                                                class="fa fa-chevron-right"
+                                                                                aria-hidden="true"></i></span> <span
+                                                                            class="sr-only">Next</span></a></li>
                                                         </ul>
                                                     </nav>
                                                 </div>
@@ -2138,7 +2122,7 @@
         <div class="modal-content quick-view-modal">
             <div class="modal-body">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
+                            aria-hidden="true">&times;</span></button>
                 <div class="row">
                     <div class="col-lg-6 col-xs-12">
                         <div class="quick-view-img"><img src="../assets/images/pro3/1.jpg" alt=""
@@ -2171,16 +2155,16 @@
                                 <div class="qty-box">
                                     <div class="input-group"><span class="input-group-prepend"><button type="button"
                                                                                                        class="btn quantity-left-minus" data-type="minus" data-field=""><i
-                                            class="ti-angle-left"></i></button> </span>
+                                                        class="ti-angle-left"></i></button> </span>
                                         <input type="text" name="quantity" class="form-control input-number"
                                                value="1"> <span class="input-group-prepend"><button type="button"
                                                                                                     class="btn quantity-right-plus" data-type="plus" data-field=""><i
-                                                class="ti-angle-right"></i></button></span>
+                                                        class="ti-angle-right"></i></button></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="product-buttons"><a href="#" class="btn btn-solid">add to cart</a> <a
-                                    href="#" class="btn btn-solid">view detail</a></div>
+                                        href="#" class="btn btn-solid">view detail</a></div>
                         </div>
                     </div>
                 </div>
@@ -2877,5 +2861,6 @@
     }
 </script>
 </body>
+
 
 </html>

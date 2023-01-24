@@ -60,14 +60,15 @@ class FrontEndController extends AbstractController
         return $this->render('front_end/collection/collection_page.html.twig');
     }
 
-    #[Route('/dashboards', name: 'app_dashboard')]
-    public function dashboards(): Response
+    #[Route('/listingtest', name: 'app_listingcold')]
+    public function collectiondd(): Response
     {
-
-        return $this->render('front_end/dashboard.html.twig');
+        // Get all products
+        $products = $this->entityManager->getRepository(Product::class)->findAll();
+        return $this->render('front_end/index/listing2.html.twig',[
+            'products'=>$products,
+        ]);
     }
-
-
 
 
 }
