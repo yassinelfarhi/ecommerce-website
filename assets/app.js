@@ -14,7 +14,9 @@ import './styles/css/vendors/animate.css';
 import './styles/css/vendors/price-range.css';
 import './styles/css/vendors/themify-icons.css';
 import './styles/fonts/google-fonts/work-sans.css';
-import './styles/fonts/google-fonts/nunito.css';
+import './styles/fonts/google-fonts/work-sans.css';
+import './styles/fonts/google-fonts/lato.css';
+import './styles/fonts/google-fonts/yellow-tail.css';
 import './styles/app.scss';
 import './styles/css/vendors/font-awesome.css';
 import './styles/css/vendors/flag-icon.css';
@@ -45,7 +47,7 @@ import './js/height-equal.js'
 import './js/bootstrap-notify.min.js'
 import './js/theme-setting.js'
 import './js/script.js'
-
+import './js/menu.js'
 
 // import './js/counter/counter-custom.js'
 // import './js/custom-card/custom-card.js'

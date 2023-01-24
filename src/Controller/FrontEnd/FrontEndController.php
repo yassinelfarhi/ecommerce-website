@@ -37,7 +37,7 @@ class FrontEndController extends AbstractController
     {
         // Get all products
         $products = $this->entityManager->getRepository(Product::class)->findAll();
-        return $this->render('front_end/index/listing.html.twig',[
+        return $this->render('front_end/index/listing2.html.twig',[
             'products'=>$products,
         ]);
     }
@@ -60,15 +60,15 @@ class FrontEndController extends AbstractController
         return $this->render('front_end/collection/collection_page.html.twig');
     }
 
-    #[Route('/listingtest', name: 'app_listingcold')]
-    public function collectiondd(): Response
-    {
-        // Get all products
-        $products = $this->entityManager->getRepository(Product::class)->findAll();
-        return $this->render('front_end/index/listing2.html.twig',[
-            'products'=>$products,
-        ]);
-    }
+//    #[Route('/listingtest', name: 'app_listingcold')]
+//    public function collectiondd(): Response
+//    {
+//        // Get all products
+//        $products = $this->entityManager->getRepository(Product::class)->findAll();
+//        return $this->render('front_end/index/listing2.html.twig',[
+//            'products'=>$products,
+//        ]);
+//    }
 
 
 }
