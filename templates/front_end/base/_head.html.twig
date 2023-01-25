@@ -10,37 +10,9 @@
     <link rel="shortcut icon" href="../assets/images/favicon/1.png" type="image/x-icon">
     <title>{% block title %} E-Com {% endblock %}</title>
 
-    <!--Google font-->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/font-awesome.css') }}">
-
-    <!--Slick slider css-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/slick.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/slick-theme.css') }}">
-
-
-    <!-- Animate icon -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/animate.css') }}">
-
-
-    <!-- Themify icon -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/themify-icons.css') }}">
-
-
-    <!-- Bootstrap css -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/vendors/bootstrap.css') }}">
-
-
-    <!-- Theme css -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
-
 
 </head>
