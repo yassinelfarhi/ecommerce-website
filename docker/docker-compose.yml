@@ -1,0 +1,83 @@
+version: '3.7'
+services:
+    database:
+        container_name: database
+        build: database
+        ports:
+            - "9000:8000"
+        volumes:
+            - ./project:/var/www/html
+
+    mailer:
+        image: schickling/mailcatcher
+        ports: [1025, 1080]
+
+    database:
+        image: mysql:8.0
+        environment:
+            MYSQL_DATABASE: symfony_docker
+            MYSQL_USER: symfony
+            MYSQL_PASSWORD: symfony
+        volumes:
+            - db-data:/var/lib/mysql/data:rw
+        ports:
+            - "5431"
+
+volumes:
+    db-data:
+
+#version: '3'
+#
+#services:
+#    database:
+#        container_name: database
+#        image: mysql:8.0
+#        command: --default-authentication-plugin=mysql_native_password
+#        environment:
+#            MYSQL_ROOT_PASSWORD: secret
+#            MYSQL_DATABASE: symfony_docker
+#            MYSQL_USER: symfony
+#            MYSQL_PASSWORD: symfony
+#        ports:
+#            - '4306:3306'
+#        volumes:
+#            - ./db-data:/var/lib/mysql:rw
+#    php:
+#        build:
+#            context: .
+#            target: app_php
+#        image: sf-docker/php:dev
+#        restart: on-failure
+#        environment:
+#            APP_ENV: dev
+#            APP_DEBUG: 1
+##            PHP_DATE_TIMEZONE: ${PHP_DATE_TIMEZONE:-UTC}
+##            XDEBUG_CONFIG: remote_host=docker.for.mac.localhost
+#            PHP_IDE_CONFIG: serverName=localhost
+#        depends_on:
+#            - database
+#        volumes:
+#            - .:/app:rw,cached
+#            - var:/app/var
+#
+#    apache:
+#        build:
+#            context: .
+#            target: app_apache
+#        image: sf-docker/apache:dev
+#        restart: on-failure
+#        depends_on:
+#            - php
+#        volumes:
+#            - ./public:/app/public:ro
+#        ports:
+#            - "8080:80"
+#
+#    app:
+#        image: fbf053a375b6bbe0b4cd9f7be92ddec1438354b3ba0aa962aaa7ca76fdf2b066
+#        ports:
+#            - "8090:80"
+#        volumes:
+#            - .:/var/www/
+#volumes:
+#    db-data:

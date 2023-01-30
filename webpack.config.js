@@ -13,7 +13,10 @@ Encore
     .setPublicPath('/build')
     // only needed for CDN's or subdirectory deploy
     //.setManifestKeyPrefix('build/')
-
+    .copyFiles({
+        from: './assets/styles/images',
+        to: 'images/[path][name].[hash:8].[ext]',
+    })
     /*
      * ENTRY CONFIG
      *
@@ -57,7 +60,9 @@ Encore
     })
 
     // enables Sass/SCSS support
-    //.enableSassLoader()
+
+    .enableSassLoader()
+
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
@@ -70,7 +75,9 @@ Encore
     //.enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+
+    .autoProvidejQuery()
+
 ;
 
 module.exports = Encore.getWebpackConfig();
