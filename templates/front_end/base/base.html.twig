@@ -3,12 +3,14 @@
 
     {% block head %}
         {% include 'front_end/base/_head.html.twig' %}
-        {% include 'front_end/base/_head.html.twig' %}
     {% endblock %}
 
 
 
     {% block body %}
+
+
+
         <body class="theme-color-1">
 
            <!-- loader start -->
@@ -214,10 +216,11 @@
                 {% include 'front_end/base/_footer.html.twig' %}
             {% endblock %}
 
+
+
            {% block js %}
                    {% include 'front_end/base/_js.html.twig' %}
            {% endblock %}
-
 
         </body>
     {% endblock %}
