@@ -56,12 +56,6 @@ class Product
         return $this->id;
     }
 
-
-
-
-
-
-
     public function getApiId(): ?int
     {
         return $this->apiId;
@@ -205,4 +199,5 @@ class Product
 
         return $this;
     }
+
 }
