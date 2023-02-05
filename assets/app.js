@@ -29,7 +29,7 @@ import './styles/css/style.css';
 
 // I comment some libraries to avoid warnings in the console, also we don't need some of them for now
 //js
-import './js/testfile';
+// import './js/testfile';
 import './js/menu.js'
 import './js/bootstrap.bundle.min.js'
 import './js/icons/feather-icon/feather.min.js'
