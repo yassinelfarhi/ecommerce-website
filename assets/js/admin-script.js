@@ -66,6 +66,7 @@ $(".chat-menu-icons .toogle-bar").click(function () {
  ==========================*/
 $(".bg-img").parent().addClass('bg-size');
 
+alert(54)
 jQuery('.bg-img').each(function () {
 
     var el = $(this),

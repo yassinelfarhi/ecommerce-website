@@ -43,6 +43,7 @@
     $(".bg-img").parent().addClass('bg-size');
     $(".bg-img.blur-up").parent().addClass('blur-up lazyload');
 
+    alert(51)
     jQuery('.bg-img').each(function () {
 
         var el = $(this),

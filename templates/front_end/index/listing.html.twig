@@ -501,16 +501,16 @@
                                                     <div class="product-box">
                                                         <div class="img-wrapper">
                                                             <div class="front">
-                                                                <a href="#">
+                                                                <a href="{{ path('front_show_product',{'idproduct': product.id}) }}">
                                                                     <img src="{{ product.mainImage }}"
                                                                          class="img-fluid blur-up lazyload bg-img"
-                                                                         alt="">
+                                                                         alt="{ product.name }}">
                                                                 </a>
                                                             </div>
                                                             <div class="back">
-                                                                <a href="#"><img src="{{ product.mainImage }}"
+                                                                <a href="{{ path('front_show_product',{'idproduct': product.id}) }}"><img src="{{ product.mainImage }}"
                                                                                  class="img-fluid blur-up lazyload bg-img"
-                                                                                 alt=""></a>
+                                                                                 alt="{{ product.name }}"></a>
                                                             </div>
                                                             <div class="cart-info cart-wrap">
                                                                 <button data-bs-toggle="modal"
