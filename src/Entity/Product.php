@@ -18,9 +18,6 @@ class Product
     #[Assert\Unique]
     private ?int $apiId = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $ean = null;
-
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
@@ -51,6 +48,9 @@ class Product
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $ean = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -64,18 +64,6 @@ class Product
     public function setApiId(int $apiId): self
     {
         $this->apiId = $apiId;
-
-        return $this;
-    }
-
-    public function getEan(): ?int
-    {
-        return $this->ean;
-    }
-
-    public function setEan(?int $ean): self
-    {
-        $this->ean = $ean;
 
         return $this;
     }
@@ -196,6 +184,18 @@ class Product
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getEan(): ?string
+    {
+        return $this->ean;
+    }
+
+    public function setEan(string $ean): self
+    {
+        $this->ean = $ean;
 
         return $this;
     }
