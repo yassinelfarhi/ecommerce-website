@@ -3,6 +3,13 @@
 
 {% block main %}
 
+    {#  ****************** List Variables ******************  #}
+    <script>
+        var maxEnStock = {{ product.id }}
+    </script>
+
+    {#  ******************//******************  #}
+
         <!-- section start -->
         <section>
             <div class="collection-wrapper">
@@ -42,6 +49,7 @@
                         <div class="col-lg-6 rtl-text">
                             <div class="product-right">
                                 <div class="product-count">
+                                    <div class="product-id" class="d-none">{{ product.id }}</div>
                                     <ul>
                                         <li>
                                             <img src="../assets/images/fire.gif" class="img-fluid" alt="image">
@@ -56,7 +64,7 @@
                                     </ul>
                                 </div>
                                 {# Product title #}
-                                <h2>{{ product.name }}</h2>
+                                <h2 class="product-name">{{ product.name }}</h2>
                                 <div class="rating-section">
                                     <div class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
                                                 class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
@@ -68,7 +76,7 @@
                                     <span class="label-text">in fashion</span>
                                 </div>
                                 {# product price #}
-                                <h3 class="price-detail">{{ product.price}} <del>$459.00</del><span>55% off</span></h3>
+                                <h3 class="price-detail"><span class="product-price">{{ product.price}}</span> <del>$459.00</del><span>55% off</span></h3>
 
                                 <ul class="color-variant">
                                     <li class="bg-light0 active"></li>
@@ -107,17 +115,21 @@
                                         <div class="input-group"><span class="input-group-prepend"><button type="button"
                                                                                                            class="btn quantity-left-minus" data-type="minus" data-field=""><i
                                                             class="ti-angle-left"></i></button> </span>
-                                            <input type="text" name="quantity" class="form-control input-number" value="1">
+                                            <input type="text" name="quantity" class="form-control input-number count" value="1">
                                             <span class="input-group-prepend"><button type="button"
                                                                                       class="btn quantity-right-plus" data-type="plus" data-field=""><i
                                                             class="ti-angle-right"></i></button></span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-buttons"><a href="javascript:void(0)" id="cartEffect"
-                                                                class="btn btn-solid hover-solid btn-animation"><i class="fa fa-shopping-cart me-1"
-                                                                                                                   aria-hidden="true"></i> add to cart</a> <a href="#" class="btn btn-solid"><i
-                                                class="fa fa-bookmark fz-16 me-2" aria-hidden="true"></i>wishlist</a></div>
+                                <div class="product-buttons">
+                                    <div id="cartEffect" class="btn btn-solid hover-solid btn-animation product">
+                                        <i class="fa fa-shopping-cart me-1" aria-hidden="true"></i> add to cart
+                                    </div>
+                                    <a href="#" class="btn btn-solid">
+                                        <i class="fa fa-bookmark fz-16 me-2" aria-hidden="true"></i>wishlist
+                                    </a>
+                                </div>
                                 <div class="product-count">
                                     <ul>
                                         <li>
