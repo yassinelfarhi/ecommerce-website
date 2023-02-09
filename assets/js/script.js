@@ -2067,11 +2067,13 @@ $('#cartEffect').on('click', function (e) {
 
         let item = helpers.itemData();
         console.log(item);
-        cart.addItem(item);
 
         setTimeout(function () {
             $('.added-notification').removeClass("show");
         }, 5000);
+
+        cart.addItem(item);
+
     } else {
         $('#selectSize').addClass('cartMove');
     }
@@ -2136,12 +2138,12 @@ var helpers = {
 
     getHtml: function (id) {
 
-        return document.getElementById(id).innerHTML;
+        // return document.getElementById(id).innerHTML;
 
     },
     setHtml: function (id, html) {
 
-        document.getElementById(id).innerHTML = html;
+        // document.getElementById(id).innerHTML = html;
         return true;
 
     },
@@ -2166,17 +2168,17 @@ var helpers = {
         };
 
     },
-    updateView: function () {
-
-        var items = cart.getItems(),
-            template = this.getHtml('cartT'),
-            compiled = _.template(template, {
-                items: items
-            });
-        this.setHtml('cartItems', compiled);
-        this.updateTotal();
-
-    },
+    // updateView: function () {
+    //
+    //     var items = cart.getItems(),
+    //         template = this.getHtml('cartT'),
+    //         compiled = _.template(template, {
+    //             items: items
+    //         });
+    //     this.setHtml('cartItems', compiled);
+    //     this.updateTotal();
+    //
+    // },
     emptyView: function () {
 
         this.setHtml('cartItems', '<p>Nothing to see here</p>');
@@ -2232,7 +2234,6 @@ var cart = {
 
             storage.saveCart(this.items);
 
-
         } else {
 
             this.updateItem(item);
@@ -2240,8 +2241,6 @@ var cart = {
         }
         this.total += item.price * item.count;
         this.count += item.count;
-        helpers.updateView();
-
     },
     containsItem: function (id) {
 
@@ -2287,7 +2286,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (storage.getCart()) {
 
         cart.setItems(storage.getCart());
-        helpers.updateView();
+        // helpers.updateView();
 
     } else {
 
