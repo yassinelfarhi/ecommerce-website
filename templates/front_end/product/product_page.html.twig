@@ -19,20 +19,14 @@
                             <div class="row">
                                 <div class="col-12 p-0">
                                     <div class="slider-right-nav">
-                                        {% for image in product.images %}#}
-                                        <div>
-                                            <img src="{{ image  }}" alt="{{ product.name }}"
-                                                  class="img-fluid blur-up lazyload image_zoom_cls-1"></div>
+                                        {% if product.images is defined %}
+                                            {% for image in product.images %}#}
+                                                <div>
+                                                    <img src="{{ image  }}" alt="{{ product.name }}"
+                                                         class="img-fluid blur-up lazyload image_zoom_cls-1">
+                                                </div>
                                             {% endfor %}
-
-{#                                        <div><img src="../assets/images/pro3/1.jpg" alt=""#}
-{#                                                  class="img-fluid blur-up lazyload"></div>#}
-{#                                        <div><img src="../assets/images/pro3/2.jpg" alt=""#}
-{#                                                  class="img-fluid blur-up lazyload"></div>#}
-{#                                        <div><img src="../assets/images/pro3/27.jpg" alt=""#}
-{#                                                  class="img-fluid blur-up lazyload"></div>#}
-{#                                        <div><img src="../assets/images/pro3/27.jpg" alt=""#}
-{#                                                  class="img-fluid blur-up lazyload"></div>#}
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
