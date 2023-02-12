@@ -275,7 +275,7 @@
 
         let $qty = $(".input-number");
         let currentVal = parseInt($qty.val());
-        if (!isNaN(currentVal) && currentVal < maxEnStock ) {
+        if (!isNaN(currentVal)) {
             $qty.val(currentVal + 1);
         }
 
@@ -2064,15 +2064,34 @@ $('#cartEffect').on('click', function (e) {
     if ($("#selectSize .size-box ul").hasClass('selected')) {
         $('#cartEffect').text("Added to bag ");
         $('.added-notification').addClass("show");
-
         let item = helpers.itemData();
-        console.log(item);
-
         setTimeout(function () {
             $('.added-notification').removeClass("show");
         }, 5000);
 
+        let productImage = $('.main-image').attr('src');
+        let productName = $('.product-name').text();
+
+        let product = `<li>
+            <div class="media">
+                <a href="#"><img class="me-3"
+                                 src="${ productImage }"
+                                 alt="Generic placeholder image"></a>
+                <div class="media-body">
+                    <a href="#">
+                        <h4>${ productName }</h4>
+                    </a>
+                    <h4><span>1 x $ 299.00</span></h4>
+                </div>
+            </div>
+            <div class="close-circle">
+                <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+        </li>`
+
+        $('.shopping-cart').prepend(product);
         cart.addItem(item);
+        helpers.updateView();
 
     } else {
         $('#selectSize').addClass('cartMove');
@@ -2168,17 +2187,29 @@ var helpers = {
         };
 
     },
-    // updateView: function () {
-    //
-    //     var items = cart.getItems(),
-    //         template = this.getHtml('cartT'),
-    //         compiled = _.template(template, {
-    //             items: items
-    //         });
-    //     this.setHtml('cartItems', compiled);
-    //     this.updateTotal();
-    //
-    // },
+    updateView: function () {
+
+        var items = cart.getItems(),
+            template = this.getHtml('cartT');
+            // compiled = _.template(template, {
+            //     items: items
+            // });
+
+        let countItem = 0
+        let subtotal = 0
+        items.forEach(function myFunction(item, index) {
+            console.log(item);
+            countItem = countItem + item.count;
+            subtotal = subtotal + item.total;
+
+        });
+
+        $('.item-number').text(countItem)
+        $('.subtotal').html(subtotal)
+        //this.setHtml('cartItems', compiled);
+        this.updateTotal();
+
+    },
     emptyView: function () {
 
         this.setHtml('cartItems', '<p>Nothing to see here</p>');
@@ -2224,12 +2255,13 @@ var cart = {
 
         if (this.containsItem(item.id) === false) {
 
+            let total = item.price * item.count
             this.items.push({
                 id: item.id,
                 name: item.name,
                 price: item.price,
                 count: item.count,
-                total: item.price * item.count
+                total: total.toFixed(2)
             });
 
             storage.saveCart(this.items);
@@ -2239,6 +2271,8 @@ var cart = {
             this.updateItem(item);
 
         }
+        alert(88)
+        console.log(item.price)
         this.total += item.price * item.count;
         this.count += item.count;
     },
@@ -2286,7 +2320,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (storage.getCart()) {
 
         cart.setItems(storage.getCart());
-        // helpers.updateView();
+        helpers.updateView();
 
     } else {
 
@@ -2306,11 +2340,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    document.querySelector('#clear').addEventListener('click', function (e) {
-
-        cart.clearItems();
-
-    });
+    // document.querySelector('#clear').addEventListener('click', function (e) {
+    //
+    //     cart.clearItems();
+    //
+    // });
 
 
 });

@@ -501,14 +501,14 @@
                                                     <div class="product-box">
                                                         <div class="img-wrapper">
                                                             <div class="front">
-                                                                <a href="{{ path('front_show_product',{'product': product.id}) }}">
+                                                                <a href="{{ path('front_show_product',{'product': product.slug }) }}">
                                                                     <img src="{{ product.mainImage }}"
                                                                          class="img-fluid blur-up lazyload bg-img"
                                                                          alt="{ product.name }}">
                                                                 </a>
                                                             </div>
                                                             <div class="back">
-                                                                <a href="{{ path('front_show_product',{'product': product.id}) }}"><img src="{{ product.mainImage }}"
+                                                                <a href="{{ path('front_show_product',{'product': product.slug }) }}"><img src="{{ product.mainImage }}"
                                                                                  class="img-fluid blur-up lazyload bg-img"
                                                                                  alt="{{ product.name }}"></a>
                                                             </div>

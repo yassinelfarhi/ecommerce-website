@@ -1,2 +1,15 @@
 
 // Add your css(scss) here
+
+.cart-circle{
+  position: relative;
+  top: 20px;
+  left: 7px;
+  width: 20px;
+  height: 20px;
+  background: #f00;
+  color: white;
+  text-align: center;
+  display: block;
+  z-index: 10;
+}
