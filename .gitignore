@@ -10,6 +10,7 @@
 /vendor/
 /tests/
 /mysql
+.env
 
 ###< symfony/framework-bundle ###
 
