@@ -9,6 +9,7 @@
 /var/
 /vendor/
 /tests/
+/mysql
 
 ###< symfony/framework-bundle ###
 

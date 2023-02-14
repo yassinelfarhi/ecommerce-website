@@ -2069,27 +2069,8 @@ $('#cartEffect').on('click', function (e) {
             $('.added-notification').removeClass("show");
         }, 5000);
 
-        let productImage = $('.main-image').attr('src');
-        let productName = $('.product-name').text();
 
-        let product = `<li>
-            <div class="media">
-                <a href="#"><img class="me-3"
-                                 src="${ productImage }"
-                                 alt="Generic placeholder image"></a>
-                <div class="media-body">
-                    <a href="#">
-                        <h4>${ productName }</h4>
-                    </a>
-                    <h4><span>1 x $ 299.00</span></h4>
-                </div>
-            </div>
-            <div class="close-circle">
-                <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-            </div>
-        </li>`
 
-        $('.shopping-cart').prepend(product);
         cart.addItem(item);
         helpers.updateView();
 
@@ -2189,23 +2170,19 @@ var helpers = {
     },
     updateView: function () {
 
-        var items = cart.getItems(),
-            template = this.getHtml('cartT');
-            // compiled = _.template(template, {
-            //     items: items
-            // });
+        var items = cart.getItems()
 
         let countItem = 0
         let subtotal = 0
-        items.forEach(function myFunction(item, index) {
-            console.log(item);
-            countItem = countItem + item.count;
-            subtotal = subtotal + item.total;
+        let item = helpers.itemData();
+
+        items.forEach(function myFunction(product, index) {
+            countItem = countItem + product.count;
 
         });
 
-        $('.item-number').text(countItem)
-        $('.subtotal').html(subtotal)
+        $('.item-number').text(countItem);
+        $('.item-number').addClass('cart-circle');
         //this.setHtml('cartItems', compiled);
         this.updateTotal();
 
@@ -2264,15 +2241,52 @@ var cart = {
                 total: total.toFixed(2)
             });
 
+            let productImage = $('.main-image').attr('src');
+            let productName = $('.product-name').text();
+
+            let product = `<li>
+                <div class="media">
+                    <a href="#"><img class="me-3"
+                                     src="${ productImage }"
+                                     alt="Generic placeholder image"></a>
+                    <div class="media-body">
+                        <a href="#">
+                            <h4>${ productName }</h4>
+                        </a>
+                        <h4><span class="item-count-${ item.id }">${ item.count }</span> x <span class="item-price-${ item.id }"> ${ item.price }$</span></h4>
+                    </div>
+                </div>
+                <div class="close-circle">
+                    <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </div>
+            </li>`
+            let subtotal = item.count * item.price;
+            $('.subtotal').text(subtotal.toFixed(2));
+
+            $('.shopping-cart').prepend(product);
+
             storage.saveCart(this.items);
 
         } else {
 
             this.updateItem(item);
+            let itemtest = storage.getCart();
+            itemtest.forEach(function myFunction(product, index) {
+                if(product.id === item.id){
+                    let total = product.count * item.price
+                    $(`.item-count-${ item.id }`).text(product.count);
+                    $(`.item-price-${ item.id }`).text(item.price);
+                    $('.subtotal').text(total.toFixed(2));
+                }
+            });
+
+            // let itemCount =  parseInt($(`.item-count-${item.id}`).text()) + item.count;
+            // // $(`.item-count-${item.id}`).text(itemCount);
+            // console.log(itemCount);
+
+
 
         }
-        alert(88)
-        console.log(item.price)
         this.total += item.price * item.count;
         this.count += item.count;
     },
@@ -2324,6 +2338,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     } else {
 
+        $('.item-number').removeClass('cart-circle');
         helpers.emptyView();
 
     }
