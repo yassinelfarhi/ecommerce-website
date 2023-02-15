@@ -5,6 +5,9 @@ namespace App\Controller\FrontEnd;
 use App\Entity\Product;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use function PHPUnit\Framework\isNull;
@@ -18,11 +21,16 @@ class FrontEndController extends AbstractController
     private $entityManager;
 
     /**
-     * @param EntityManagerInterface $entityManager
+     * @var RequestStack
      */
-    public function __construct(EntityManagerInterface $entityManager)
+    private $request;
+
+
+
+    public function __construct(EntityManagerInterface $entityManager, RequestStack $request)
     {
         $this->entityManager = $entityManager;
+        $this->request = $request;
     }
 
     #[Route('/home', name: 'app_home')]
@@ -57,10 +65,35 @@ class FrontEndController extends AbstractController
         // Get products by collection name
         //$products = $this->entityManager->getRepository(Product::class)->getProductsByCollection('men');
         $products = $this->entityManager->getRepository(Product::class)->findAll();
-//        dd($products);
         return $this->render('front_end/index/listing.html.twig',[
             'products'=>$products,
         ]);
+
+    }
+
+    #[Route('/addtocart/', name: 'app_addtoacrt', methods: 'POST')]
+    public function addtocart(Request $request): Response
+    {
+
+        $cart = $request->request->get('cart');
+        $session = $this->request->getSession();
+        $session->set('cart',$cart);
+        $cart = $session->get('cart');
+
+        $decoded = json_decode($cart);
+        foreach ($decoded as $key => $item){
+            $stdClass =  get_object_vars($item);
+            $product =  $this->entityManager->getRepository(Product::class)->find($stdClass['id']);
+            return $this->render('/front_end/cart/_cart.html.twig', [
+                'product' => $product,
+                'count' => $stdClass['count']
+            ]);
+
+        }
+
+//        $session->remove('my_variable');
+
+        return new JsonResponse('Ok');
 
     }
 

@@ -2069,8 +2069,6 @@ $('#cartEffect').on('click', function (e) {
             $('.added-notification').removeClass("show");
         }, 5000);
 
-
-
         cart.addItem(item);
         helpers.updateView();
 
@@ -2143,7 +2141,6 @@ var helpers = {
     },
     setHtml: function (id, html) {
 
-        // document.getElementById(id).innerHTML = html;
         return true;
 
     },
@@ -2262,12 +2259,18 @@ var cart = {
             </li>`
             let subtotal = item.count * item.price;
             $('.subtotal').text(subtotal.toFixed(2));
-
             $('.shopping-cart').prepend(product);
 
+
+            console.log(this.items);
+            let param = [4,88,54];
+            addToCart(param);
+
+            sessionStorage.setItem('my_variable', 'test session');
             storage.saveCart(this.items);
 
         } else {
+
 
             this.updateItem(item);
             let itemtest = storage.getCart();
@@ -2280,11 +2283,13 @@ var cart = {
                 }
             });
 
+            alert(885);
+            let param = itemtest;
+            addToCart(param);
+
+
             // let itemCount =  parseInt($(`.item-count-${item.id}`).text()) + item.count;
-            // // $(`.item-count-${item.id}`).text(itemCount);
-            // console.log(itemCount);
-
-
+            // $(`.item-count-${item.id}`).text(itemCount);
 
         }
         this.total += item.price * item.count;
@@ -2363,3 +2368,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
+
+function addToCart(param) {
+    alert('ajax');
+    console.log(param)
+    let myJsonString = JSON.stringify(param);
+    jQuery(document).ready(function (){
+        jQuery.ajax({
+            type: "POST",
+            url: '/addtocart/',
+            data: {
+                cart: myJsonString
+            },
+            success: function(data, textStatus, jqXHR) {
+                alert(4);
+                console.log(data)
+            }
+        });
+
+    });
+}
+
