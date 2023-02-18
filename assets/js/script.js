@@ -2104,7 +2104,19 @@ var localAdapter = {
 
         localStorage.removeItem(cartId);
 
+    },
+    removeItem: function (itemId) {
+
+        let items = localStorage.getItem('cart')
+        alert('ok')
+        console.log(items);
+        let obj = JSON.parse(items.replace(/\[|\]/g, ''));
+        console.log(obj);
+
+       // localStorage.removeItem(itemId);
+
     }
+
 
 };
 
@@ -2150,6 +2162,7 @@ var helpers = {
             name = $(".product-name").text(),
             price = $(".product-price").text(),
             id = $(".product-id").text(),
+            picture = $(".main-image").attr('src'),
             pattern = new RegExp("^[1-9]([0-9]+)?$");
 
         count = (pattern.test(count) === true) ? parseFloat(count) : 1;
@@ -2160,6 +2173,7 @@ var helpers = {
             price: price,
             id: id,
             count: count,
+            picture: picture,
             total: parseFloat(price) * count
 
         };
@@ -2171,16 +2185,43 @@ var helpers = {
 
         let countItem = 0
         let subtotal = 0
+        let subtotalTest = 0
         let item = helpers.itemData();
+
+        let productImage = ''
+        let productName = 'Bandana blk/roy one size'
+        let product  = ''
 
         items.forEach(function myFunction(product, index) {
             countItem = countItem + product.count;
+            subtotalTest = subtotalTest + parseFloat(product.total);
+            // product = `<li>
+            //     <div class="media">
+            //         <a href="#"><img class="me-3"
+            //                          src="${ product.picture }"
+            //                          alt="Generic placeholder image"></a>
+            //         <div class="media-body">
+            //             <a href="#">
+            //                 <h4>${ productName }</h4>
+            //             </a>
+            //             <h4><span class="item-count-${ product.id }">${ product.count }</span> x <span class="item-price-${ product.id }"> ${ product.price }$</span></h4>
+            //         </div>
+            //     </div>
+            //     <div class="close-circle">
+            //         <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+            //     </div>
+            // </li>`
 
+            subtotal = item.count * item.price;
+            $('.shopping-cart').prepend(product);
         });
 
+        console.log(subtotalTest);
+
+        $('.subtotal').text(subtotalTest.toFixed(2));
         $('.item-number').text(countItem);
         $('.item-number').addClass('cart-circle');
-        //this.setHtml('cartItems', compiled);
+
         this.updateTotal();
 
     },
@@ -2194,6 +2235,45 @@ var helpers = {
 
         this.setHtml('totalPrice', cart.total + '$');
 
+    },
+    loadcart: function () {
+        var items = cart.getItems()
+
+        let countItem = 0
+        let subtotal = 0
+        let subtotalTest = 0
+        let item = helpers.itemData();
+
+        let productImage = ''
+        let productName = 'Bandana blk/roy one size'
+        let product  = ''
+
+        items.forEach(function myFunction(product, index) {
+            countItem = countItem + product.count;
+            subtotalTest = subtotalTest + parseFloat(product.total);
+            product = `<li id="${ product.id }" class="item-${ product.id }">
+                <div class="media">
+                    <a href="#"><img class="me-3"
+                                     src="${ product.picture }"
+                                     alt="Generic placeholder image"></a>
+                    <div class="media-body">
+                        <a href="#">
+                            <h4>${ productName }</h4>
+                        </a>
+                        <h4><span class="item-count-${ product.id }">${ product.count }</span> x <span class="item-price-${ product.id }"> ${ product.price }$</span></h4>
+                    </div>
+                </div>
+                <div class="close-circle remove-item-${ product.id }" id="${ product.id }">
+                    <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </div>
+            </li>`
+
+            subtotal = item.count * item.price;
+            $('.shopping-cart').prepend(product);
+        });
+
+
+        $('.subtotal').text(subtotalTest.toFixed(2));
     }
 
 };
@@ -2229,12 +2309,13 @@ var cart = {
 
         if (this.containsItem(item.id) === false) {
 
-            let total = item.price * item.count
+            let total = parseFloat(item.price) * item.count
             this.items.push({
                 id: item.id,
                 name: item.name,
                 price: item.price,
                 count: item.count,
+                picture: item.picture,
                 total: total.toFixed(2)
             });
 
@@ -2261,16 +2342,9 @@ var cart = {
             $('.subtotal').text(subtotal.toFixed(2));
             $('.shopping-cart').prepend(product);
 
-
-            console.log(this.items);
-            let param = [4,88,54];
-            addToCart(param);
-
-            sessionStorage.setItem('my_variable', 'test session');
             storage.saveCart(this.items);
 
         } else {
-
 
             this.updateItem(item);
             let itemtest = storage.getCart();
@@ -2282,14 +2356,6 @@ var cart = {
                     $('.subtotal').text(total.toFixed(2));
                 }
             });
-
-            alert(885);
-            let param = itemtest;
-            addToCart(param);
-
-
-            // let itemCount =  parseInt($(`.item-count-${item.id}`).text()) + item.count;
-            // $(`.item-count-${item.id}`).text(itemCount);
 
         }
         this.total += item.price * item.count;
@@ -2321,8 +2387,8 @@ var cart = {
 
             if (object.id === _item.id) {
 
-                _item.count = parseInt(object.count) + parseInt(_item.count);
-                _item.total = parseInt(object.total) + parseInt(_item.total);
+                _item.count = parseFloat(object.count) + parseFloat(_item.count);
+                _item.total = parseFloat(object.total) + parseFloat(_item.total);
                 this.items[i] = _item;
                 storage.saveCart(this.items);
 
@@ -2330,9 +2396,28 @@ var cart = {
 
         }
 
-    }
+    },
+    removeItem: function (id) {
+
+        if (this.items === undefined) {
+            return false;
+        }
+
+        for (var i = 0; i < this.items.length; i++) {
+
+            var _item = this.items[i];
+
+            if (id == _item.id) {
+                storage.removeItem(id);
+            }
+
+        }
+        return false;
+
+    },
 
 };
+
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -2340,6 +2425,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         cart.setItems(storage.getCart());
         helpers.updateView();
+        helpers.loadcart();
 
     } else {
 
@@ -2360,6 +2446,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    $('.close-circle').on('click', function (e) {
+        let itemId = $(this).attr('id')
+        cart.removeItem(itemId);
+        helpers.loadcart()
+        console.log(itemId);
+    });
+
     // document.querySelector('#clear').addEventListener('click', function (e) {
     //
     //     cart.clearItems();
@@ -2370,22 +2463,21 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function addToCart(param) {
-    alert('ajax');
-    console.log(param)
-    let myJsonString = JSON.stringify(param);
-    jQuery(document).ready(function (){
-        jQuery.ajax({
-            type: "POST",
-            url: '/addtocart/',
-            data: {
-                cart: myJsonString
-            },
-            success: function(data, textStatus, jqXHR) {
-                alert(4);
-                console.log(data)
-            }
-        });
 
-    });
+    // let myJsonString = JSON.stringify(param);
+    // jQuery(document).ready(function (){
+    //     jQuery.ajax({
+    //         type: "POST",
+    //         url: '/addtocart/',
+    //         data: {
+    //             cart: myJsonString
+    //         },
+    //         success: function(data, textStatus, jqXHR) {
+    //             alert(4);
+    //             console.log(data)
+    //         }
+    //     });
+    //
+    // });
 }
 
