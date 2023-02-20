@@ -2449,8 +2449,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $('.close-circle').on('click', function (e) {
         let itemId = $(this).attr('id')
         cart.removeItem(itemId);
-        helpers.loadcart()
-        console.log(itemId);
+        helpers.loadcart();
     });
 
     // document.querySelector('#clear').addEventListener('click', function (e) {
