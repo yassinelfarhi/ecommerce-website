@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {% block head %}
+        {% include 'front_end/base/_head.html.twig' %}
+    {% endblock %}
+
+
+
+    {% block body %}
+
+
+
+        <body class="theme-color-1">
+
+
+           {% block header %}
+                   {% include 'front_end/base/_header.html.twig' %}
+           {% endblock %}
+
+           {% block breadcrumb %}
+{#                   {% include 'front_end/base/_breadcrumb.html.twig' %}#}
+           {% endblock %}
+
+
+           {% block main %}{% endblock %}
+
+
+            {% block footer %}
+                {% include 'front_end/base/_footer.html.twig' %}
+            {% endblock %}
+
+
+
+           {% block js %}
+                   {% include 'front_end/base/_js.html.twig' %}
+           {% endblock %}
+
+        </body>
+    {% endblock %}
+
+</html>
