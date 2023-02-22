@@ -28,6 +28,11 @@ security:
                 login_path: app_login
                 check_path: app_login
                 enable_csrf: true
+
+            remember_me:
+                secret: '%kernel.secret%' # required
+                lifetime: 604800 # 1 week in seconds
+                always_remember_me: true
             custom_authenticator: App\Security\AppAuthenticator
             logout:
                 path: app_logout

@@ -2269,6 +2269,7 @@ var helpers = {
             </li>`
 
             subtotal = item.count * item.price;
+            alert(44)
             $('.shopping-cart').prepend(product);
         });
 

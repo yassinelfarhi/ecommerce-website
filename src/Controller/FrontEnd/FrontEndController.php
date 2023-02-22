@@ -71,6 +71,18 @@ class FrontEndController extends AbstractController
 
     }
 
+    #[Route('/checkout', name: 'app_checkout')]
+    public function checkout(): Response
+    {
+
+        // Get products by collection name
+        //$products = $this->entityManager->getRepository(Product::class)->getProductsByCollection('men');
+        return $this->render('front_end/checkout/checkout.html.twig',[
+
+        ]);
+
+    }
+
     #[Route('/addtocart/', name: 'app_addtoacrt', methods: 'POST')]
     public function addtocart(Request $request): Response
     {
