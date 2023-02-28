@@ -9,8 +9,10 @@
 /var/
 /vendor/
 /tests/
+
 /mysql
 .env
+
 
 ###< symfony/framework-bundle ###
 
@@ -30,6 +32,7 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
 
 
 
@@ -263,3 +266,4 @@ fabric.properties
 /web/js/
 
 # End of https://www.toptal.com/developers/gitignore/api/symfony,phpstorm+all,phpstorm
+
