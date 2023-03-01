@@ -57,7 +57,7 @@
     });
 
 
-    /*=====================  
+    /*=====================
      02.Tap on Top
      ==========================*/
     $(window).on('scroll', function () {
@@ -119,14 +119,17 @@
     $(".bg-img").parent().addClass('bg-size');
     $(".bg-img.blur-up").parent().addClass('blur-up lazyload');
 
+
     jQuery('.bg-img').each(function () {
+
 
         var el = $(this),
             src = el.attr('src'),
             parent = el.parent();
 
+
         parent.css({
-            'background-image': 'url(' + src + ')',
+            'background-image': 'url("'+src+'")',
             'background-size': 'cover',
             'background-position': 'center',
             'display': 'block'
@@ -211,10 +214,9 @@
         $('.category-shop-section .nav').removeClass("show");
     });
     $('.close-btn').on('click', function () {
-        console.log("click");
         $('.top-panel-adv').addClass("hide");
     });
-    
+
 
     /*=========================
      09. left category slider height
@@ -269,21 +271,24 @@
         $(".qty-input").val('1');
     });
     $('.quantity-right-plus').on('click', function () {
-        var $qty = $(this).siblings(".qty-input");
-        var currentVal = parseInt($qty.val());
+
+
+        let $qty = $(".input-number");
+        let currentVal = parseInt($qty.val());
         if (!isNaN(currentVal)) {
             $qty.val(currentVal + 1);
         }
+
     });
     $('.quantity-left-minus').on('click', function () {
-        var $qty = $(this).siblings(".qty-input");
+        var $qty = $(".input-number");
         var _val = $($qty).val();
         if (_val == '1') {
             var _removeCls = $(this).parents('.cart_qty');
             $(_removeCls).removeClass("open");
         }
         var currentVal = parseInt($qty.val());
-        if (!isNaN(currentVal) && currentVal > 0) {
+        if (!isNaN(currentVal) && currentVal > 1) {
             $qty.val(currentVal - 1);
         }
     });
@@ -314,15 +319,15 @@
     if ($(window).width() > 767) {
         var $slider = $(".full-slider");
         $slider.
-            on('init', function () {
-                mouseWheel($slider);
-            }).
-            slick({
-                dots: true,
-                nav: false,
-                vertical: true,
-                infinite: false
-            });
+        on('init', function () {
+            mouseWheel($slider);
+        }).
+        slick({
+            dots: true,
+            nav: false,
+            vertical: true,
+            infinite: false
+        });
 
         function mouseWheel($slider) {
             $(window).on('wheel', {
@@ -342,15 +347,15 @@
     } else {
         var $slider = $(".full-slider");
         $slider.
-            on('init', function () {
-                mouseWheel($slider);
-            }).
-            slick({
-                dots: true,
-                nav: false,
-                vertical: false,
-                infinite: false
-            });
+        on('init', function () {
+            mouseWheel($slider);
+        }).
+        slick({
+            dots: true,
+            nav: false,
+            vertical: false,
+            infinite: false
+        });
 
         function mouseWheel($slider) {
             $(window).on('wheel', {
@@ -420,13 +425,13 @@
                 slidesToScroll: 2
             }
         },
-        {
-            breakpoint: 767,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
             }
-        }
         ]
     });
 
@@ -530,20 +535,20 @@
                 slidesToScroll: 3
             }
         },
-        {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 586,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
             }
-        },
-        {
-            breakpoint: 586,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1
-            }
-        }
         ]
     });
 
@@ -561,20 +566,20 @@
                 slidesToScroll: 3
             }
         },
-        {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 586,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
             }
-        },
-        {
-            breakpoint: 586,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
         ]
     });
 
@@ -592,13 +597,13 @@
                 slidesToScroll: 3
             }
         },
-        {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
             }
-        }
         ]
     });
 
@@ -616,13 +621,13 @@
                 slidesToScroll: 3
             }
         },
-        {
-            breakpoint: 767,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
             }
-        }
         ]
     });
 
@@ -640,27 +645,27 @@
                 slidesToScroll: 3
             }
         },
-        {
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
             }
-        },
-        {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
-            }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        }
         ]
     });
 
@@ -694,13 +699,13 @@
                 slidesToScroll: 2
             }
         },
-        {
-            breakpoint: 767,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
             }
-        }
         ]
     });
 
@@ -717,28 +722,28 @@
                 slidesToScroll: 4
             }
         },
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
             }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
-            }
-        }
         ]
     });
 
@@ -755,28 +760,28 @@
                 slidesToScroll: 4
             }
         },
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
             }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
-            }
-        },
-        {
-            breakpoint: 576,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        }
         ]
     });
 
@@ -795,28 +800,28 @@
                 slidesToScroll: 4
             }
         },
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
             }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
-            }
-        }
         ]
     });
 
@@ -834,29 +839,29 @@
                 infinite: true
             }
         },
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                infinite: true
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
             }
-        },
-        {
-            breakpoint: 767,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        }
 
         ]
     });
@@ -875,43 +880,43 @@
                 infinite: true
             }
         },
-        {
-            breakpoint: 1500,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                infinite: true
+            {
+                breakpoint: 1500,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
             }
-        },
-        {
-            breakpoint: 1199,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true
-            }
-        },
-        {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4
-            }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
-            }
-        },
-        {
-            breakpoint: 576,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        }
 
         ]
     });
@@ -931,29 +936,29 @@
                 infinite: true,
             }
         },
-        {
-            breakpoint: 1199,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                infinite: true
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
             }
-        },
-        {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true
-            }
-        },
-        {
-            breakpoint: 767,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        }
 
         ]
     });
@@ -972,36 +977,36 @@
                 infinite: true
             }
         },
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                infinite: true
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 360,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
             }
-        },
-        {
-            breakpoint: 767,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        },
-        {
-            breakpoint: 360,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
 
         ]
     });
@@ -1019,13 +1024,13 @@
                 slidesToScroll: 3
             }
         },
-        {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
             }
-        }
         ]
     });
 
@@ -1042,21 +1047,21 @@
                 slidesToScroll: 4
             }
         },
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
             }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        }
         ]
     });
 
@@ -1073,28 +1078,28 @@
                 slidesToScroll: 6
             }
         },
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 5,
-                slidesToScroll: 5,
-                infinite: true
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
             }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
-            }
-        }
         ]
     });
 
@@ -1111,35 +1116,35 @@
                 slidesToScroll: 6
             }
         },
-        {
-            breakpoint: 1199,
-            settings: {
-                slidesToShow: 5,
-                slidesToScroll: 5,
-                infinite: true
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
             }
-        },
-        {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4
-            }
-        },
-        {
-            breakpoint: 767,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
-            }
-        },
-        {
-            breakpoint: 576,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        }
         ]
     });
 
@@ -1284,15 +1289,15 @@
                 slidesToShow: 3
             }
         },
-        {
-            breakpoint: 480,
-            settings: {
-                arrows: false,
-                centerMode: true,
-                centerPadding: '40px',
-                slidesToShow: 1
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
             }
-        }
         ]
     });
 
@@ -1396,29 +1401,29 @@
                 infinite: true
             }
         },
-        {
-            breakpoint: 1199,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
             }
-        },
-        {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                infinite: true
-            }
-        },
-        {
-            breakpoint: 767,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
 
         ]
     });
@@ -1435,29 +1440,29 @@
                 slidesToScroll: 4
             }
         },
-        {
-            breakpoint: 1199,
-            settings: {
-                slidesToShow: 5,
-                slidesToScroll: 5,
-                infinite: true
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
             }
-        },
-        {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                infinite: true
-            }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        }
         ]
     });
 
@@ -1510,14 +1515,14 @@
                 slidesToScroll: 3
             }
         },
-        {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                infinite: true
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true
+                }
             }
-        }
         ]
     });
 
@@ -1536,46 +1541,46 @@
                 slidesToScroll: 3
             }
         },
-        {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 460,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    centerMode: true,
+                    centerPadding: '30px',
+                    dots: false
+                }
             }
-        },
-        {
-            breakpoint: 767,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                infinite: true,
-                centerMode: true,
-                centerPadding: '40px',
-                dots: false
-            }
-        },
-        {
-            breakpoint: 460,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                infinite: true,
-                centerMode: true,
-                centerPadding: '30px',
-                dots: false
-            }
-        }
         ]
     });
 
 
     $('.left-arrow').click(function () {
         $('.custom-arrow-3').slick('slickPrev');
-      })
-      
-      $('.right-arrow').click(function () {
+    })
+
+    $('.right-arrow').click(function () {
         $('.custom-arrow-3').slick('slickNext');
-      })
+    })
 
 
     /*=====================
@@ -1629,20 +1634,20 @@
                     slidesToScroll: 3
                 }
             },
-            {
-                breakpoint: 991,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 420,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
                 }
-            },
-            {
-                breakpoint: 420,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
             ]
         });
     });
@@ -1670,28 +1675,28 @@
                     slidesToScroll: 4
                 }
             },
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
                 }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 576,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
             ]
 
         });
@@ -2059,9 +2064,14 @@ $('#cartEffect').on('click', function (e) {
     if ($("#selectSize .size-box ul").hasClass('selected')) {
         $('#cartEffect').text("Added to bag ");
         $('.added-notification').addClass("show");
+        let item = helpers.itemData();
         setTimeout(function () {
             $('.added-notification').removeClass("show");
         }, 5000);
+
+        cart.addItem(item);
+        helpers.updateView();
+
     } else {
         $('#selectSize').addClass('cartMove');
     }
@@ -2071,3 +2081,403 @@ $('#cartEffect').on('click', function (e) {
 $('.add-extent .animated-btn').on('click', function (e) {
     $(this).parents(".add-extent").toggleClass("show");
 });
+
+
+
+var cartId = "cart";
+
+var localAdapter = {
+
+    saveCart: function (object) {
+
+        var stringified = JSON.stringify(object);
+        localStorage.setItem(cartId, stringified);
+        return true;
+
+    },
+    getCart: function () {
+
+        return JSON.parse(localStorage.getItem(cartId));
+
+    },
+    clearCart: function () {
+
+        localStorage.removeItem(cartId);
+
+    },
+    removeItem: function (itemId) {
+
+        let items = localStorage.getItem('cart')
+        alert('ok')
+        console.log(items);
+        let obj = JSON.parse(items.replace(/\[|\]/g, ''));
+        console.log(obj);
+
+       // localStorage.removeItem(itemId);
+
+    }
+
+
+};
+
+var ajaxAdapter = {
+
+    saveCart: function (object) {
+
+        var stringified = JSON.stringify(object);
+        // do an ajax request here
+
+    },
+    getCart: function () {
+
+        // do an ajax request -- recognize user by cookie / ip / session
+        return JSON.parse(data);
+
+    },
+    clearCart: function () {
+
+        //do an ajax request here
+
+    }
+
+};
+
+var storage = localAdapter;
+
+var helpers = {
+
+    getHtml: function (id) {
+
+        // return document.getElementById(id).innerHTML;
+
+    },
+    setHtml: function (id, html) {
+
+        return true;
+
+    },
+    itemData: function (object) {
+
+        let count = $(".count").val(),
+            name = $(".product-name").text(),
+            price = $(".product-price").text(),
+            id = $(".product-id").text(),
+            picture = $(".main-image").attr('src'),
+            pattern = new RegExp("^[1-9]([0-9]+)?$");
+
+        count = (pattern.test(count) === true) ? parseFloat(count) : 1;
+
+        return {
+
+            name: name,
+            price: price,
+            id: id,
+            count: count,
+            picture: picture,
+            total: parseFloat(price) * count
+
+        };
+
+    },
+    updateView: function () {
+
+        var items = cart.getItems()
+
+        let countItem = 0
+        let subtotal = 0
+        let subtotalTest = 0
+        let item = helpers.itemData();
+
+        let productImage = ''
+        let productName = 'Bandana blk/roy one size'
+        let product  = ''
+
+        items.forEach(function myFunction(product, index) {
+            countItem = countItem + product.count;
+            subtotalTest = subtotalTest + parseFloat(product.total);
+            // product = `<li>
+            //     <div class="media">
+            //         <a href="#"><img class="me-3"
+            //                          src="${ product.picture }"
+            //                          alt="Generic placeholder image"></a>
+            //         <div class="media-body">
+            //             <a href="#">
+            //                 <h4>${ productName }</h4>
+            //             </a>
+            //             <h4><span class="item-count-${ product.id }">${ product.count }</span> x <span class="item-price-${ product.id }"> ${ product.price }$</span></h4>
+            //         </div>
+            //     </div>
+            //     <div class="close-circle">
+            //         <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+            //     </div>
+            // </li>`
+
+            subtotal = item.count * item.price;
+            $('.shopping-cart').prepend(product);
+        });
+
+        console.log(subtotalTest);
+
+        $('.subtotal').text(subtotalTest.toFixed(2));
+        $('.item-number').text(countItem);
+        $('.item-number').addClass('cart-circle');
+
+        this.updateTotal();
+
+    },
+    emptyView: function () {
+
+        this.setHtml('cartItems', '<p>Nothing to see here</p>');
+        this.updateTotal();
+
+    },
+    updateTotal: function () {
+
+        this.setHtml('totalPrice', cart.total + '$');
+
+    },
+    loadcart: function () {
+        var items = cart.getItems()
+
+        let countItem = 0
+        let subtotal = 0
+        let subtotalTest = 0
+        let item = helpers.itemData();
+
+        let productImage = ''
+        let productName = 'Bandana blk/roy one size'
+        let product  = ''
+
+        items.forEach(function myFunction(product, index) {
+            countItem = countItem + product.count;
+            subtotalTest = subtotalTest + parseFloat(product.total);
+            product = `<li id="${ product.id }" class="item-${ product.id }">
+                <div class="media">
+                    <a href="#"><img class="me-3"
+                                     src="${ product.picture }"
+                                     alt="Generic placeholder image"></a>
+                    <div class="media-body">
+                        <a href="#">
+                            <h4>${ productName }</h4>
+                        </a>
+                        <h4><span class="item-count-${ product.id }">${ product.count }</span> x <span class="item-price-${ product.id }"> ${ product.price }$</span></h4>
+                    </div>
+                </div>
+                <div class="close-circle remove-item-${ product.id }" id="${ product.id }">
+                    <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </div>
+            </li>`
+
+            subtotal = item.count * item.price;
+            alert(44)
+            $('.shopping-cart').prepend(product);
+        });
+
+
+        $('.subtotal').text(subtotalTest.toFixed(2));
+    }
+
+};
+
+var cart = {
+
+    count: 0,
+    total: 0,
+    items: [],
+    getItems: function () {
+
+        return this.items;
+
+    },
+    setItems: function (items) {
+
+        this.items = items;
+        for (var i = 0; i < this.items.length; i++) {
+            var _item = this.items[i];
+            this.total += _item.total;
+        }
+
+    },
+    clearItems: function () {
+
+        this.items = [];
+        this.total = 0;
+        storage.clearCart();
+        helpers.emptyView();
+
+    },
+    addItem: function (item) {
+
+        if (this.containsItem(item.id) === false) {
+
+            let total = parseFloat(item.price) * item.count
+            this.items.push({
+                id: item.id,
+                name: item.name,
+                price: item.price,
+                count: item.count,
+                picture: item.picture,
+                total: total.toFixed(2)
+            });
+
+            let productImage = $('.main-image').attr('src');
+            let productName = $('.product-name').text();
+
+            let product = `<li>
+                <div class="media">
+                    <a href="#"><img class="me-3"
+                                     src="${ productImage }"
+                                     alt="Generic placeholder image"></a>
+                    <div class="media-body">
+                        <a href="#">
+                            <h4>${ productName }</h4>
+                        </a>
+                        <h4><span class="item-count-${ item.id }">${ item.count }</span> x <span class="item-price-${ item.id }"> ${ item.price }$</span></h4>
+                    </div>
+                </div>
+                <div class="close-circle">
+                    <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </div>
+            </li>`
+            let subtotal = item.count * item.price;
+            $('.subtotal').text(subtotal.toFixed(2));
+            $('.shopping-cart').prepend(product);
+
+            storage.saveCart(this.items);
+
+        } else {
+
+            this.updateItem(item);
+            let itemtest = storage.getCart();
+            itemtest.forEach(function myFunction(product, index) {
+                if(product.id === item.id){
+                    let total = product.count * item.price
+                    $(`.item-count-${ item.id }`).text(product.count);
+                    $(`.item-price-${ item.id }`).text(item.price);
+                    $('.subtotal').text(total.toFixed(2));
+                }
+            });
+
+        }
+        this.total += item.price * item.count;
+        this.count += item.count;
+    },
+    containsItem: function (id) {
+
+        if (this.items === undefined) {
+            return false;
+        }
+
+        for (var i = 0; i < this.items.length; i++) {
+
+            var _item = this.items[i];
+
+            if (id == _item.id) {
+                return true;
+            }
+
+        }
+        return false;
+
+    },
+    updateItem: function (object) {
+
+        for (var i = 0; i < this.items.length; i++) {
+
+            var _item = this.items[i];
+
+            if (object.id === _item.id) {
+
+                _item.count = parseFloat(object.count) + parseFloat(_item.count);
+                _item.total = parseFloat(object.total) + parseFloat(_item.total);
+                this.items[i] = _item;
+                storage.saveCart(this.items);
+
+            }
+
+        }
+
+    },
+    removeItem: function (id) {
+
+        if (this.items === undefined) {
+            return false;
+        }
+
+        for (var i = 0; i < this.items.length; i++) {
+
+            var _item = this.items[i];
+
+            if (id == _item.id) {
+                storage.removeItem(id);
+            }
+
+        }
+        return false;
+
+    },
+
+};
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    if (storage.getCart()) {
+
+        cart.setItems(storage.getCart());
+        helpers.updateView();
+        helpers.loadcart();
+
+    } else {
+
+        $('.item-number').removeClass('cart-circle');
+        helpers.emptyView();
+
+    }
+    // Add product to the cart event
+    $('#cartEffect').on('click', function (e) {
+        if ($("#selectSize .size-box ul").hasClass('selected')) {
+            $('#cartEffect').text("Added to bag ");
+            $('.added-notification').addClass("show");
+            setTimeout(function () {
+                $('.added-notification').removeClass("show");
+            }, 5000);
+        } else {
+            $('#selectSize').addClass('cartMove');
+        }
+    });
+
+    $('.close-circle').on('click', function (e) {
+        let itemId = $(this).attr('id')
+        cart.removeItem(itemId);
+        helpers.loadcart();
+    });
+
+    // document.querySelector('#clear').addEventListener('click', function (e) {
+    //
+    //     cart.clearItems();
+    //
+    // });
+
+
+});
+
+function addToCart(param) {
+
+    // let myJsonString = JSON.stringify(param);
+    // jQuery(document).ready(function (){
+    //     jQuery.ajax({
+    //         type: "POST",
+    //         url: '/addtocart/',
+    //         data: {
+    //             cart: myJsonString
+    //         },
+    //         success: function(data, textStatus, jqXHR) {
+    //             alert(4);
+    //             console.log(data)
+    //         }
+    //     });
+    //
+    // });
+}
+

@@ -1,2 +1,2 @@
-//This file just for test
-// alert(54)
+//This file is for test
+// alert(879);

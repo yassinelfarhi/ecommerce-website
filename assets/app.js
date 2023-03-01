@@ -28,13 +28,17 @@ import './styles/css/style.css';
 
 
 
-// I comment some libraries to avoid warnings in the console, also we don't need some of them for now
+// I comment some libraries to avoid warnings in the console,
+// also we don't need some of them for now
 //js
 import './js/testfile';
+import './js/cart';
 import './js/menu.js'
 import './js/bootstrap.bundle.min.js'
 import './js/icons/feather-icon/feather.min.js'
-import './js/icons/feather-icon/feather-icon.js'
+import './js/slick.js'
+import './js/script.js'
+// import './js/icons/feather-icon/feather-icon.js'
 import './js/sidebar-menu.js'
 import './js/chart/chartist/chartist.js'
 import './js/chart/chartjs/chart.min.js'
@@ -47,10 +51,10 @@ import './js/chart/sparkline/sparkline.js'
 import './js/chat-menu.js'
 import './js/height-equal.js'
 import './js/bootstrap-notify.min.js'
-import './js/script.js'
+
 import './js/price-range.js'
 import './js/lazysizes.min.js'
-import './js/slick.js'
+import './js/timer.js'
 // import './js/theme-setting.js'
 // import './js/counter/counter-custom.js'
 // import './js/custom-card/custom-card.js'

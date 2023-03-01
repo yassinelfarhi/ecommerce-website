@@ -1,0 +1,18 @@
+
+
+<li>
+    <div class="media">
+        <a href="#"><img class="me-3"
+                         src="{{ product.mainImage }}"
+                         alt="Generic placeholder image"></a>
+        <div class="media-body">
+            <a href="#">
+                <h4>{{ product.name }}</h4>
+            </a>
+            <h4><span class="item-count-{{ product.id }}">{{ count }}</span> x <span class="item-price-{{ product.id }}"> {{ product.price }}$</span></h4>
+        </div>
+    </div>
+    <div class="close-circle">
+        <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+    </div>
+</li>

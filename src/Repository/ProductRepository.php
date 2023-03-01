@@ -39,6 +39,27 @@ class ProductRepository extends ServiceEntityRepository
         }
     }
 
+    public function findProductBySlug($value): ?Product
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.slug = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult();
+
+    }
+
+    public function getProductsByCollection($value): ?Product
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.exampleField = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+
 //    /**
 //     * @return Product[] Returns an array of Product objects
 //     */

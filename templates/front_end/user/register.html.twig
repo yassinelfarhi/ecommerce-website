@@ -1,0 +1,95 @@
+{% extends 'front_end/base/base_page_static.html.twig' %}
+
+
+  {% block breadcrumb %}
+
+  {% endblock %}
+
+{% block main %}
+
+
+<section class="register-page section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>create account</h3>
+                <div class="theme-card">
+
+                    {% for flash_error in app.flashes('verify_email_error') %}
+                        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+                    {% endfor %}
+
+                       {{ form_start(registrationForm,{'attr': {'class':'theme-form'}}) }}
+
+{#                        <div class="form-row row">#}
+{#                            <div class="col-md-6">#}
+
+{#                                <label for="email">First Name</label>#}
+{#                                <input type="text" class="form-control" id="fname" placeholder="First Name">#}
+
+{#                            </div>#}
+{#                            <div class="col-md-6">#}
+{#                                <label for="review">Last Name</label>#}
+{#                                <input type="password" class="form-control" id="lname" placeholder="Last Name">#}
+{#                            </div>#}
+{#                        </div>#}
+                        <div class="form-row row">
+                            <div class="col-md-6">
+
+                                <label for="email">Email</label>
+                                {{ form_widget(registrationForm.email) }}
+
+                            </div>
+                            <div class="col-md-6">
+                                {{ form_row(registrationForm.plainPassword, {
+                                    label: 'Password'
+                                }) }}
+                            </div>
+
+
+                            <button type="submit" class="btn btn-solid w-auto">Create Account</button>
+
+{#                            <a href="#" type="submit" class="btn btn-solid w-auto">create Account</a>#}
+                        </div>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- latest jquery-->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- feather icon js-->
+    <script src="assets/js/icons/feather-icon/feather.min.js"></script>
+    <script src="assets/js/icons/feather-icon/feather-icon.js"></script>
+
+    <!-- Sidebar jquery-->
+    <script src="assets/js/sidebar-menu.js"></script>
+    <script src="assets/js/slick.js"></script>
+
+    <!-- lazyload js-->
+    <script src="assets/js/lazysizes.min.js"></script>
+
+    <!--right sidebar js-->
+    <script src="assets/js/chat-menu.js"></script>
+
+    <!--script admin-->
+    <script src="assets/js/admin-script.js"></script>
+    <script>
+        $('.single-item').slick({
+            arrows: false,
+            dots: true
+        });
+    </script>
+
+{% endblock main %}
+
+
+

@@ -18,14 +18,8 @@ class Product
     #[Assert\Unique]
     private ?int $apiId = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $ean = null;
-
     #[ORM\Column(length: 255)]
     private ?string $name = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $description = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $category = null;
@@ -51,16 +45,19 @@ class Product
     #[ORM\Column(nullable: true)]
     private ?float $retailPrice = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $description = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $ean = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $slug = null;
+
     public function getId(): ?int
     {
         return $this->id;
     }
-
-
-
-
-
-
 
     public function getApiId(): ?int
     {
@@ -74,18 +71,6 @@ class Product
         return $this;
     }
 
-    public function getEan(): ?int
-    {
-        return $this->ean;
-    }
-
-    public function setEan(?int $ean): self
-    {
-        $this->ean = $ean;
-
-        return $this;
-    }
-
     public function getName(): ?string
     {
         return $this->name;
@@ -94,18 +79,6 @@ class Product
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(?string $description): self
-    {
-        $this->description = $description;
 
         return $this;
     }
@@ -205,4 +178,41 @@ class Product
 
         return $this;
     }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getEan(): ?string
+    {
+        return $this->ean;
+    }
+
+    public function setEan(string $ean): self
+    {
+        $this->ean = $ean;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $slug = preg_replace('/[^A-Za-z0-9-]+/', '-', $this->getName());
+        $this->slug = $slug;
+        return $this;
+    }
+
 }
