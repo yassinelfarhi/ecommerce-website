@@ -51,7 +51,7 @@ class Product
     #[ORM\Column(length: 255)]
     private ?string $ean = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $slug = null;
 
     public function getId(): ?int
