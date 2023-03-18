@@ -59,7 +59,7 @@ import './js/lazysizes.min.js'
 // import './js/custom-card/custom-card.js'
 // import './js/dashboard/default.js'
 
-import './js/testfile';
+// import './js/testfile';
 
 // start the Stimulus application
 import './bootstrap';
