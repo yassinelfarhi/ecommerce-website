@@ -39,6 +39,11 @@ class ProductRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @param $value
+     * @return Product|null
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
     public function findProductBySlug($value): ?Product
     {
         return $this->createQueryBuilder('p')
@@ -49,6 +54,10 @@ class ProductRepository extends ServiceEntityRepository
 
     }
 
+    /**
+     * @param $value
+     * @return Product|null
+     */
     public function getProductsByCollection($value): ?Product
     {
         return $this->createQueryBuilder('p')
@@ -58,6 +67,20 @@ class ProductRepository extends ServiceEntityRepository
             ->getResult()
             ;
     }
+
+
+    /**
+     * @param $limit
+     * @return null|array
+     */
+    public function findWithLimit($limit): ?array
+    {
+        return $this->createQueryBuilder('p')
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult();
+    }
+
 
 
 //    /**

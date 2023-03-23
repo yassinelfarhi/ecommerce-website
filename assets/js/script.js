@@ -2108,7 +2108,6 @@ var localAdapter = {
     removeItem: function (itemId) {
 
         let items = localStorage.getItem('cart')
-        alert('ok')
         console.log(items);
         let obj = JSON.parse(items.replace(/\[|\]/g, ''));
         console.log(obj);
@@ -2269,7 +2268,6 @@ var helpers = {
             </li>`
 
             subtotal = item.count * item.price;
-            alert(44)
             $('.shopping-cart').prepend(product);
         });
 
