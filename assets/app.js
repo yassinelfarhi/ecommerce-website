@@ -50,6 +50,9 @@ import './js/chart/sparkline/sparkline.js'
 import './js/chat-menu.js'
 import './js/height-equal.js'
 import './js/bootstrap-notify.min.js'
+import './js/editor/ckeditor/ckeditor.js'
+import './js/editor/ckeditor/ckeditor.custom.js'
+
 
 import './js/price-range.js'
 import './js/lazysizes.min.js'

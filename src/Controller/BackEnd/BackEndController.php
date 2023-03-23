@@ -3,6 +3,7 @@
 namespace App\Controller\BackEnd;
 
 use App\Entity\Product;
+use App\Form\ProductType;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -45,7 +46,7 @@ class BackEndController extends AbstractController
         return $this->render('back_end/dashboard/dashboard.html.twig');
     }
 
-    #[Route('/products/list/{limit}', name: 'back_product_listing',defaults: ['limit' => 10],requirements: ['page' => '\d+'] )]
+    #[Route('/products/list/{limit}', name: 'back_product_listing', requirements: ['page' => '\d+'], defaults: ['limit' => 10])]
     public function productListing(int $limit, Request $request): Response
     {
         $data = $this->entityManager->getRepository(Product::class)->findAll();
@@ -61,4 +62,18 @@ class BackEndController extends AbstractController
             ]
         );
     }
+
+
+    #[Route('/products/add', name: 'add_product')]
+    public function addProduct(Request $request): Response
+    {
+        $product = new Product();
+        $form = $this->createForm(ProductType::class, $product);
+        return $this->render(
+            'back_end/product/add-product.html.twig', [
+                'form' => $form
+            ]
+        );
+    }
+
 }
